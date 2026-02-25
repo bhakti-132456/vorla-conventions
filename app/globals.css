@@ -30,7 +30,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f5f5f0;
+
+    /* Subtle Dark Mode Claymorphism */
+    --clay-outer: 10px 10px 20px #040404, -10px -10px 20px rgba(255, 255, 255, 0.02);
+    --clay-inner: inset 2px 2px 5px rgba(255, 255, 255, 0.02), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+
+    /* Subtle Dark Mode Neuromorphism */
+    --neuro-pressed-shadow: inset 6px 6px 12px #040404, inset -6px -6px 12px rgba(255, 255, 255, 0.02);
+    --neuro-elevated-shadow: 6px 6px 12px #040404, -6px -6px 12px rgba(255, 255, 255, 0.02);
+    --neuro-gradient: linear-gradient(145deg, #0d0d0d, #050505);
   }
 }
 
@@ -38,6 +47,16 @@
   body {
     @apply bg-[var(--background)] text-[var(--foreground)] antialiased overflow-x-hidden;
     font-family: var(--font-geist-sans), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-zinc-900;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4, h5, h6 {
+      color: #f5f5f0; /* Beige/Off-white for dark backgrounds */
+    }
   }
 }
 

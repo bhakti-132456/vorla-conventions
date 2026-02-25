@@ -85,17 +85,21 @@ export default function Home() {
               key={item.label}
               className="neuro-pillow text-center aspect-square flex flex-col items-center justify-center hover:scale-[1.02] transition-transform cursor-pointer overflow-hidden relative group"
             >
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+
               <Image
                 src={item.img}
                 alt={item.label}
                 fill
-                className="object-cover opacity-0 group-hover:opacity-30 transition-opacity duration-700"
+                className="object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-700 z-0"
               />
-              <div className="relative z-10">
-                <span className="text-[10px] font-mono text-zinc-400 mb-4 block">
+
+              <div className="relative z-20">
+                <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-300 mb-4 block transition-colors">
                   0{i + 1}
                 </span>
-                <h4 className="text-2xl font-light uppercase tracking-widest text-zinc-800">
+                <h4 className="text-2xl font-light uppercase tracking-widest text-zinc-800 group-hover:text-white transition-colors">
                   {item.label}
                 </h4>
               </div>

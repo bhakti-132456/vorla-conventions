@@ -42,13 +42,13 @@ export default function Navigation() {
                                     }`}
                             >
                                 <div
-                                    className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-zinc-800" : "bg-zinc-400"
+                                    className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-[var(--foreground)]" : "bg-zinc-400"
                                         }`}
                                 />
                             </div>
                             <span
                                 className={`text-[8px] font-mono uppercase tracking-[0.15em] transition-colors ${isActive
-                                    ? "text-zinc-900 font-bold"
+                                    ? "text-[var(--foreground)] font-bold"
                                     : "text-zinc-400 group-hover:text-zinc-600"
                                     }`}
                             >

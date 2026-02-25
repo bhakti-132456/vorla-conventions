@@ -43,12 +43,12 @@ export default function ContactPage() {
 
                     {/* Details */}
                     <div className="space-y-16">
-                        <div className="flex items-start gap-6 group">
+                        <div className="flex items-center gap-6 group">
                             <div className="w-12 h-12 rounded-full clay-card flex items-center justify-center shrink-0 text-zinc-400 group-hover:text-zinc-800 transition-colors">
                                 <MapPin size={20} />
                             </div>
                             <div>
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-800 mb-3">Location</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Location</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
                                     Vorla Conventions<br />
                                     Saket, Kapra<br />
@@ -57,12 +57,12 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-6 group">
+                        <div className="flex items-center gap-6 group">
                             <div className="w-12 h-12 rounded-full clay-card flex items-center justify-center shrink-0 text-zinc-400 group-hover:text-zinc-800 transition-colors">
                                 <Phone size={20} />
                             </div>
                             <div>
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-800 mb-3">Direct Line</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Direct Line</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
                                     <a href="tel:+919876543210" className="hover:text-zinc-800 transition-colors">+91 98765 43210</a><br />
                                     <a href="tel:+919876543211" className="hover:text-zinc-800 transition-colors">+91 98765 43211</a>
@@ -70,12 +70,12 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-6 group">
+                        <div className="flex items-center gap-6 group">
                             <div className="w-12 h-12 rounded-full clay-card flex items-center justify-center shrink-0 text-zinc-400 group-hover:text-zinc-800 transition-colors">
                                 <Mail size={20} />
                             </div>
                             <div>
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-800 mb-3">Email Inquiries</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Email Inquiries</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
                                     <a href="mailto:info@vorlaconventions.in" className="hover:text-zinc-800 transition-colors">info@vorlaconventions.in</a><br />
                                     <a href="mailto:events@vorlaconventions.in" className="hover:text-zinc-800 transition-colors">events@vorlaconventions.in</a>
