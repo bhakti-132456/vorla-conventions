@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f0ebe3;
   --foreground: #171717;
+
+  /* Claymorphism */
+  --clay-outer: 10px 10px 20px #d4cfc7, -10px -10px 20px #ffffff;
+  --clay-inner: inset 2px 2px 5px #ffffff, inset -2px -2px 5px rgba(0, 0, 0, 0.08);
+  --clay-radius: 32px;
+
+  /* Neuromorphism */
+  --neuro-pressed-shadow: inset 6px 6px 12px #d4cfc7, inset -6px -6px 12px #ffffff;
+  --neuro-elevated-shadow: 6px 6px 12px #d4cfc7, -6px -6px 12px #ffffff;
+  --neuro-gradient: linear-gradient(145deg, #ece7df, #ffffff);
+
+  /* Glassmorphism */
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
@@ -19,8 +34,71 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased overflow-x-hidden;
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .clay-card {
+    box-shadow: var(--clay-outer);
+    background: var(--background);
+    border-radius: var(--clay-radius);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clay-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: var(--clay-inner);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .neuro-pressed {
+    box-shadow: var(--neuro-pressed-shadow);
+    background: var(--neuro-gradient);
+  }
+
+  .neuro-pillow {
+    box-shadow: var(--neuro-elevated-shadow);
+    background: var(--neuro-gradient);
+    border-radius: 24px;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+  }
+
+  .magnetic-button {
+    @apply relative transition-transform duration-300 ease-out;
+  }
+}
+
+/* Lenis CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

@@ -1,65 +1,108 @@
+import HeroScrub from "@/components/HeroScrub";
 import Image from "next/image";
+
+// Unsplash CC0 images for demonstration
+const UNSPLASH = {
+  hall: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80", // grand ballroom
+  lawn: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80", // outdoor garden event
+  wedding: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80", // wedding
+  corporate: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80", // corporate
+  exhibition: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80", // exhibition
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="relative bg-[var(--background)]">
+      <HeroScrub />
+
+      {/* Editorial Content Section */}
+      <section className="relative min-h-screen py-32 px-6 md:px-24 flex flex-col items-center justify-center gap-24">
+        <div className="max-w-4xl text-center space-y-8">
+          <span className="text-[10px] font-mono uppercase tracking-[1em] text-zinc-400">
+            Archive of Space
+          </span>
+          <h2 className="text-5xl md:text-8xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
+            Where Light <br /> Meets Volume
+          </h2>
+          <p className="text-xl font-light text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+            A documentation of architectural intent and spatial atmosphere across the Vorla twin-estates of Hyderabad.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
+          <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={UNSPLASH.hall}
+              alt="The Grand Hall"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="relative z-10 p-12">
+              <h3 className="text-3xl font-light uppercase tracking-tight text-white">
+                The <br /> Grand Hall
+              </h3>
+              <p className="text-sm text-white/60 mt-4 max-w-[200px]">
+                1,200+ capacity, column-free engineering.
+              </p>
+            </div>
+          </div>
+
+          <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
+            <Image
+              src={UNSPLASH.lawn}
+              alt="The Verdant Lawn"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="relative z-10 p-12">
+              <h3 className="text-3xl font-light uppercase tracking-tight text-white">
+                The <br /> Verdant Lawn
+              </h3>
+              <p className="text-sm text-white/60 mt-4 max-w-[200px]">
+                Celestial canopy for outdoor celebrations.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Program Categories (Neuromorphic Pillows) */}
+      <section className="min-h-screen py-32 px-6 bg-zinc-100 flex flex-col items-center justify-center gap-16">
+        <div className="text-center">
+          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800">The Dialogue</h2>
+          <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">Curation of Events</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
+          {[
+            { label: "Nuptials", img: UNSPLASH.wedding },
+            { label: "Corporate", img: UNSPLASH.corporate },
+            { label: "Exhibitions", img: UNSPLASH.exhibition },
+          ].map((item, i) => (
+            <div
+              key={item.label}
+              className="neuro-pillow text-center aspect-square flex flex-col items-center justify-center hover:scale-[1.02] transition-transform cursor-pointer overflow-hidden relative group"
+            >
+              <Image
+                src={item.img}
+                alt={item.label}
+                fill
+                className="object-cover opacity-0 group-hover:opacity-30 transition-opacity duration-700"
+              />
+              <div className="relative z-10">
+                <span className="text-[10px] font-mono text-zinc-400 mb-4 block">
+                  0{i + 1}
+                </span>
+                <h4 className="text-2xl font-light uppercase tracking-widest text-zinc-800">
+                  {item.label}
+                </h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
