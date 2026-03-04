@@ -20,7 +20,7 @@ export default function Navigation() {
 
     return (
         <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
-            <div className="clay-card p-3 px-6 flex items-center gap-6 backdrop-blur-md bg-[var(--background)]/60 rounded-full">
+            <div className="p-3 px-6 flex items-center gap-6 backdrop-blur-xl bg-[#111111]/80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/5">
                 {navItems.map((item) => {
                     const isActive = pathname === item.href;
                     const isClicked = clickedItem === item.label;
@@ -34,22 +34,22 @@ export default function Navigation() {
                             className="group flex flex-col items-center gap-1"
                         >
                             <div
-                                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 ${isClicked
-                                    ? "neuro-pressed scale-90 rounded-full"
+                                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isClicked
+                                    ? "bg-black/60 scale-90 shadow-[inset_0_4px_8px_rgba(0,0,0,0.6)]"
                                     : isActive
-                                        ? "clay-card rounded-full"
-                                        : "hover:bg-black/5 rounded-full"
+                                        ? "bg-[#222222] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_12px_rgba(0,0,0,0.4)]"
+                                        : "hover:bg-white/5"
                                     }`}
                             >
                                 <div
-                                    className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-[var(--foreground)]" : "bg-zinc-400"
+                                    className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-white" : "bg-zinc-500"
                                         }`}
                                 />
                             </div>
                             <span
                                 className={`text-[8px] font-mono uppercase tracking-[0.15em] transition-colors ${isActive
-                                    ? "text-[var(--foreground)] font-bold"
-                                    : "text-zinc-400 group-hover:text-zinc-600"
+                                    ? "text-white font-bold"
+                                    : "text-zinc-500 group-hover:text-zinc-300"
                                     }`}
                             >
                                 {item.label}
