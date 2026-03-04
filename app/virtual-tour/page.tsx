@@ -33,6 +33,7 @@ export default function VirtualTour() {
             posterImg: UNSPLASH.hall2,
             description: "Intimate refinement — 700+ capacity with modern elegance.",
             className: "md:col-span-1 md:row-span-1 h-[250px] md:h-auto",
+            href: "/virtual-tour/laxmi-narsamma",
         },
         {
             title: "Outdoor Spaces",
@@ -78,16 +79,25 @@ export default function VirtualTour() {
                 </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-fr">
-                    {categories.map((cat, i) => (
-                        <TourCard
-                            key={i}
-                            title={cat.title}
-                            videoSrc={cat.videoSrc}
-                            posterImg={cat.posterImg}
-                            description={cat.description}
-                            className={cat.className}
-                        />
-                    ))}
+                    {categories.map((cat, i) => {
+                        const card = (
+                            <TourCard
+                                key={i}
+                                title={cat.title}
+                                videoSrc={cat.videoSrc}
+                                posterImg={cat.posterImg}
+                                description={cat.description}
+                                className={cat.className}
+                            />
+                        );
+                        return cat.href ? (
+                            <Link key={i} href={cat.href} className={cat.className}>
+                                {card}
+                            </Link>
+                        ) : (
+                            card
+                        );
+                    })}
                 </div>
 
                 <footer className="mt-24 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-8">
