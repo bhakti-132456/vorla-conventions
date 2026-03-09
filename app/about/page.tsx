@@ -10,16 +10,12 @@ const FAQS = [
         category: "Availability & Booking",
         questions: [
             {
-                q: "How far in advance should I book Vorla Conventions?",
-                a: "For weddings, we recommend booking 6-12 months ahead, especially if you have a specific date or season in mind. For corporate events and celebrations, 2-3 months typically works well. That said, we often accommodate shorter timelines depending on availability."
+                q: "What's the maximum capacity?",
+                a: "Our twin estates cater to diverse needs, from intimate 700-guest gatherings to grand 1,200+ guest conventions."
             },
             {
-                q: "What dates are typically available?",
-                a: "We remain open year-round for events. Peak seasons include October through December, and March through May. If you have flexibility with your date, we can often offer better availability and, sometimes, more favorable pricing."
-            },
-            {
-                q: "Can I book multiple days or nights at your venue?",
-                a: "Absolutely. Many families book us for multi-day celebrations. Think mehendi followed by wedding, or extended corporate retreats. We can discuss multi-day packages that make sense for your event."
+                q: "How early should we book?",
+                a: "We recommend booking 6-12 months in advance for peak wedding seasons in Hyderabad."
             }
         ]
     },
@@ -27,12 +23,8 @@ const FAQS = [
         category: "Capacity & Space",
         questions: [
             {
-                q: "What's the maximum capacity, and can you accommodate groups of different sizes?",
-                a: "Our flexible banquet halls comfortably host anywhere from 200 to 1000+ guests. We can configure spaces to feel intimate for smaller gatherings or grand for large celebrations."
-            },
-            {
-                q: "Are there separate spaces for different parts of the event?",
-                a: "Yes. We have dedicated areas for ceremonies, receptions, dining, and mingling. Our layout allows events to flow seamlessly, and guests can move comfortably between spaces without confusion."
+                q: "Do you offer catering services?",
+                a: "We offer flexible options to suit your culinary preferences, ensuring your banquet is as memorable as the setting."
             }
         ]
     },
@@ -40,16 +32,8 @@ const FAQS = [
         category: "Catering & Services",
         questions: [
             {
-                q: "Do you provide in-house catering, or can I bring my own caterer?",
-                a: "We provide complete in-house catering with our own culinary team. Our chefs work with you to create custom menus, whether you want traditional cuisine, international dishes, or fusion concepts. If you'd like to bring your own caterer, we're happy to accommodate that with a nominal fee for venue access."
-            },
-            {
-                q: "Can you accommodate dietary restrictions and allergies?",
-                a: "Absolutely. We manage vegetarian, vegan, gluten-free, nut allergies, or any other requirements with care and transparency. Please inform us during planning."
-            },
-            {
-                q: "Is parking available for guests?",
-                a: "Yes. We provide 800+ dedicated parking spaces at no additional cost. Guests never worry about finding parking. Our lot is well-lit and secure."
+                q: "Is parking available?",
+                a: "Ample, secure parking ensures your guests' journey begins with ease and comfort."
             }
         ]
     }
@@ -105,17 +89,17 @@ export default function AboutPage() {
 
                         <div>
                             <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4 block">
-                                Heritage & Provenance
+                                The Original Premium Venue of Saket
                             </span>
                             <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
-                                About Vorla <br /> Conventions
+                                Heritage & <br /> Provenance
                             </h1>
                         </div>
                     </div>
 
                     <div className="max-w-sm">
                         <p className="text-sm font-light leading-relaxed text-zinc-500">
-                            Established in 2008, Vorla Conventions has proudly set the standard as the first air-conditioned function hall in the area, earning a reputation as the best in its class.
+                            Established in 2008, Vorla Conventions was a pioneer—the first fully AC function hall in the area. Since then, we have evolved from a local landmark into Hyderabad&apos;s premier destination for grand events. We don&apos;t just host events; we curate environments where memories are preserved.
                         </p>
                     </div>
                 </header>
@@ -123,13 +107,10 @@ export default function AboutPage() {
                 {/* Narrative Section */}
                 <section className="neuro-pillow p-8 md:p-16 mb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 mb-6">A Family Legacy</h2>
+                        <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 mb-6">Personal Management,<br />Professional Standards.</h2>
                         <div className="space-y-6 text-zinc-600 font-light leading-relaxed">
                             <p>
-                                Our venue is not just a business; it embodies our family legacy and carries our name with pride. We are deeply committed to providing exceptional service and creating unforgettable experiences for every guest who walks through our doors.
-                            </p>
-                            <p>
-                                Our dedicated management team works tirelessly to uphold the high standards that have defined us for over a decade, ensuring that each event reflects our passion for excellence. At Vorla Conventions, we believe that every celebration deserves to be extraordinary.
+                                As a family-run estate, our commitment is personal. Every detail, from the maintenance of our pillar-less halls to the hospitality shown to every guest, is overseen with a standard of excellence that only a legacy-driven team can provide.
                             </p>
                         </div>
                     </div>

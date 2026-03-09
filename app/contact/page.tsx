@@ -23,17 +23,17 @@ export default function ContactPage() {
 
                         <div>
                             <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4 block">
-                                Get In Touch
+                                Initiate a Dialogue
                             </span>
                             <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
-                                Initiate a<br />Dialogue
+                                Let&apos;s Design <br /> Your Event
                             </h1>
                         </div>
                     </div>
 
                     <div className="max-w-sm">
                         <p className="text-sm font-light leading-relaxed text-zinc-500">
-                            Whether you are planning a grand celebration or a corporate summit, our team is ready to assist you in designing the perfect experience. We invite you to explore the possibilities at Vorla Conventions.
+                            Reach out to our estate managers to schedule a private tour or request a curated proposal.
                         </p>
                     </div>
                 </header>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Location</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
                                     Vorla Conventions<br />
-                                    Saket, Kapra<br />
+                                    Saket Road, Kapra<br />
                                     Hyderabad, Telangana 500062
                                 </p>
                             </div>
@@ -89,11 +89,11 @@ export default function ContactPage() {
                         <h3 className="text-2xl font-light uppercase tracking-tight text-zinc-800 mb-8">Send an Inquiry</h3>
                         <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
                             <div>
-                                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Your Name</label>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Who is reaching out?</label>
                                 <input
                                     type="text"
                                     className="w-full bg-[var(--background)] border-none rounded-xl px-4 py-3 text-sm focus:outline-none neuro-pressed w-full placeholder:text-zinc-400 text-zinc-800 transition-all font-light"
-                                    placeholder="E.g. John Doe"
+                                    placeholder="Your Name"
                                 />
                             </div>
                             <div>
@@ -108,27 +108,33 @@ export default function ContactPage() {
                                 <div className="w-1/2">
                                     <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Event Type</label>
                                     <select className="w-full bg-[var(--background)] border-none rounded-xl px-4 py-3 text-sm focus:outline-none neuro-pressed w-full text-zinc-500 transition-all appearance-none font-light">
-                                        <option>Wedding</option>
-                                        <option>Corporate Summit</option>
-                                        <option>Social Gathering</option>
-                                        <option>Other</option>
+                                        <option>Nuptials</option>
+                                        <option>Corporate</option>
+                                        <option>Exhibition</option>
+                                        <option>Social</option>
                                     </select>
                                 </div>
                                 <div className="w-1/2">
                                     <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Guest Count</label>
                                     <input
-                                        type="number"
+                                        type="text"
                                         className="w-full bg-[var(--background)] border-none rounded-xl px-4 py-3 text-sm focus:outline-none neuro-pressed w-full placeholder:text-zinc-400 text-zinc-800 transition-all font-light"
-                                        placeholder="e.g. 500"
+                                        placeholder="e.g. 500 - 1200+"
                                     />
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Message</label>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">When shall we host you?</label>
+                                <input
+                                    type="text"
+                                    className="w-full bg-[var(--background)] border-none rounded-xl px-4 py-3 text-sm focus:outline-none neuro-pressed w-full placeholder:text-zinc-400 text-zinc-800 transition-all font-light mb-6"
+                                    placeholder="Preferred Date"
+                                />
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2">Tell us about your vision</label>
                                 <textarea
                                     rows={4}
                                     className="w-full bg-[var(--background)] border-none rounded-xl px-4 py-3 text-sm focus:outline-none neuro-pressed w-full placeholder:text-zinc-400 text-zinc-800 transition-all resize-none font-light"
-                                    placeholder="Tell us about your event..."
+                                    placeholder="Message..."
                                 />
                             </div>
                             <button className="w-full py-4 bg-zinc-800 text-white rounded-xl text-xs uppercase tracking-widest font-medium hover:bg-zinc-700 active:scale-[0.98] transition-all shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff]">

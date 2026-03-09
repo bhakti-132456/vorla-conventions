@@ -19,13 +19,13 @@ export default function Home() {
       <section className="relative min-h-screen py-32 px-6 md:px-24 flex flex-col items-center justify-center gap-24">
         <div className="max-w-4xl text-center space-y-8">
           <span className="text-[10px] font-mono uppercase tracking-[1em] text-zinc-400">
-            Archive of Space
+            Archiving Grandeur
           </span>
           <h2 className="text-5xl md:text-8xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
             Where Light <br /> Meets Volume
           </h2>
           <p className="text-xl font-light text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-            A documentation of architectural intent and spatial atmosphere across the Vorla twin-estates of Hyderabad.
+            Discover Hyderabad&apos;s twin-estate sanctuary. Vorla Conventions brings together the iconic Lakshma Reddy and Laxmi Narsamma halls—spaces designed to elevate weddings, corporate milestones, and grand exhibitions into lasting legacies.
           </p>
         </div>
 
@@ -40,10 +40,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="relative z-10 p-12">
               <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                The <br /> Grand Hall
+                Lakshma Reddy
               </h3>
-              <p className="text-sm text-white/60 mt-4 max-w-[200px]">
-                1,200+ capacity, column-free engineering.
+              <p className="text-sm text-white/80 mt-2 italic font-serif">The Grand Volume.</p>
+              <p className="text-sm text-white/60 mt-4 max-w-sm">
+                A masterclass in engineering, offering 1,200+ capacity in a stunning, pillar-free expanse. Designed for those who require scale without compromising on atmospheric intimacy.
               </p>
             </div>
           </div>
@@ -58,10 +59,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="relative z-10 p-12">
               <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                The <br /> Verdant Lawn
+                Laxmi Narsamma
               </h3>
-              <p className="text-sm text-white/60 mt-4 max-w-[200px]">
-                Celestial canopy for outdoor celebrations.
+              <p className="text-sm text-white/80 mt-2 italic font-serif">Refined Sophistication.</p>
+              <p className="text-sm text-white/60 mt-4 max-w-sm">
+                An elegant 700+ capacity space where modern aesthetics meet functional warmth. Perfect for curated gatherings and premium social events that demand a sophisticated touch.
               </p>
             </div>
           </div>
@@ -77,9 +79,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
           {[
-            { label: "Nuptials", img: UNSPLASH.wedding },
-            { label: "Corporate", img: UNSPLASH.corporate },
-            { label: "Exhibitions", img: UNSPLASH.exhibition },
+            { label: "Nuptials", desc: "A sacred canvas for your 'I Do'. We provide the sanctuary; you provide the story.", img: UNSPLASH.wedding },
+            { label: "Corporate", desc: "Elevate your brand in a space that mirrors professional excellence and architectural precision.", img: UNSPLASH.corporate },
+            { label: "Exhibitions", desc: "High-volume, high-impact. The ideal Hyderabad venue for trade fairs and large-scale showcases.", img: UNSPLASH.exhibition },
           ].map((item, i) => (
             <div
               key={item.label}
@@ -102,6 +104,9 @@ export default function Home() {
                 <h4 className="text-2xl font-light uppercase tracking-widest text-zinc-800 group-hover:text-white transition-colors">
                   {item.label}
                 </h4>
+                <p className="text-xs text-white/80 mt-4 font-light max-w-[200px] mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  {item.desc}
+                </p>
               </div>
             </div>
           ))}

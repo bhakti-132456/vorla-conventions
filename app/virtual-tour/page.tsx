@@ -21,25 +21,25 @@ const UNSPLASH = {
 export default function VirtualTour() {
     const categories = [
         {
-            title: "Vorla Lakshmi Narsamma",
+            title: "Laxmi Narsamma (Live)",
             videoSrc: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4",
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
-            description: "Experience intimate refinement — 700+ capacity with modern elegance and complete AC comfort.",
+            description: "Experience intimate refinement. A walkthrough of our 700+ capacity hall, where modern elegance meets thoughtful design.",
             className: "md:col-span-3 md:row-span-2 h-[600px]",
             href: "/virtual-tour/laxmi-narsamma",
         },
         {
-            title: "Vorla Lakshma Reddy",
+            title: "Lakshma Reddy (Coming Soon)",
             videoSrc: STOCK_VIDEOS.hall,
             posterImg: UNSPLASH.hall,
-            description: "The grand convention — 1,200+ seating, column-free engineering, premium acoustics.",
+            description: "The grand convention. A preview of our 1,200-seat, column-free engineering marvel.",
             className: "md:col-span-1 md:row-span-1 h-[400px]",
         },
         {
-            title: "Outdoor Spaces",
+            title: "Outdoor Spaces (Coming Soon)",
             videoSrc: STOCK_VIDEOS.garden,
             posterImg: UNSPLASH.garden,
-            description: "Manicured landscapes and grand courtyard for grand arrivals.",
+            description: "Nature, curated. Explore our manicured landscapes and grand ceremonial courtyard.",
             className: "md:col-span-2 md:row-span-1 h-[400px]",
         },
     ];
@@ -60,13 +60,14 @@ export default function VirtualTour() {
                         </Link>
 
                         <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 mt-4 leading-none">
-                            Virtual <br /> Documentation
+                            Digital <br /> Immersion
                         </h1>
                     </div>
 
-                    <div className="hidden md:block max-w-xs text-right">
+                    <div className="hidden md:block max-w-sm text-right">
                         <p className="text-sm font-light leading-relaxed text-zinc-500 uppercase tracking-tight">
-                            A spatial study of volume, lighting, and atmospheric quality across the Vorla estate.
+                            A Spatial Study.<br />
+                            <span className="normal-case tracking-normal">Explore the volume, lighting, and atmospheric quality of our estates from anywhere. Navigate our interiors to find the perfect fit for your vision.</span>
                         </p>
                     </div>
                 </header>
