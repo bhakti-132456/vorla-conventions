@@ -30,6 +30,7 @@ optimize() {
 
 # Mapping originals added by user
 optimize "1-day-night.mp4" "1-exterior.mp4"
+optimize "1-exterior.mp4" "1-exterior.mp4"  # Added this for direct updates
 optimize "walk-in.mp4" "2-parking.mp4"
 optimize "entrance-lobby.mp4" "3-lobby.mp4"
 optimize "4-0-VORLA-NEW-HALL-interior.mp4" "4-interior-bare.mp4"
