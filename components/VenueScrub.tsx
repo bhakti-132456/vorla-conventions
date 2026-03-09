@@ -22,6 +22,23 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [progress, setProgress] = useState(0);
+    const [isInView, setIsInView] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { rootMargin: "100% 0px", threshold: 0 } // Load when 1 screen away
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -34,18 +51,25 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
             trigger: containerRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: 1,
+            scrub: 0.5, // Smoother scrub
             onUpdate: (self) => {
                 const p = self.progress;
                 setProgress(p);
                 if (video.duration) {
-                    video.currentTime = p * video.duration;
+                    // Using requestAnimationFrame to ensure smooth updates
+                    requestAnimationFrame(() => {
+                        video.currentTime = p * video.duration;
+                    });
                 }
             },
         });
 
+        const handleLoaded = () => setIsLoaded(true);
+        video.addEventListener("loadeddata", handleLoaded);
+
         return () => {
             st.kill();
+            video.removeEventListener("loadeddata", handleLoaded);
         };
     }, []);
 
@@ -57,16 +81,34 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
         <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
             {/* Sticky viewport */}
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+                {/* Video Loader / Poster */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: isLoaded ? 0 : 1 }}
+                    className="absolute inset-0 z-10 pointer-events-none"
+                >
+                    <img
+                        src={section.posterSrc}
+                        alt=""
+                        className="w-full h-full object-cover blur-sm scale-105 opacity-50"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-8 h-8 border-2 border-white/20 border-t-white/80 rounded-full animate-spin" />
+                    </div>
+                </motion.div>
+
                 {/* Video */}
-                <video
-                    ref={videoRef}
-                    src={section.videoSrc}
-                    poster={section.posterSrc}
-                    muted
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full object-cover"
-                />
+                {isInView && (
+                    <video
+                        ref={videoRef}
+                        src={section.videoSrc}
+                        poster={section.posterSrc}
+                        muted
+                        playsInline
+                        preload="auto"
+                        className={`w-full h-full object-cover transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                )}
 
                 {/* Bottom gradient for text readability */}
                 <div
@@ -88,7 +130,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                     className="absolute top-8 left-8 md:top-12 md:left-12 pointer-events-none"
                 >
                     <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-white/50">
-                        0{index + 1}
+                        {index + 1 < 10 ? `0${index + 1}` : index + 1}
                     </span>
                 </motion.div>
 
@@ -113,7 +155,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                     {section.subtitle && (
                         <motion.p
                             animate={{
-                                opacity: showText ? 0.7 : 0,
+                                opacity: showText ? 1 : 0,
                                 y: showText ? 0 : 30,
                             }}
                             transition={{
@@ -121,7 +163,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                                 delay: 0.15,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="text-white/60 text-sm md:text-lg font-light mt-3 md:mt-5 max-w-lg text-center leading-relaxed tracking-wide"
+                            className="text-white/70 text-sm md:text-lg font-light mt-4 md:mt-6 max-w-lg text-center leading-relaxed tracking-wide"
                         >
                             {section.subtitle}
                         </motion.p>
