@@ -22,15 +22,18 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [progress, setProgress] = useState(0);
-    const [isInView, setIsInView] = useState(false);
+    const [shouldLoad, setShouldLoad] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsInView(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setShouldLoad(true);
+                    observer.disconnect();
+                }
             },
-            { rootMargin: "100% 0px", threshold: 0 } // Load when 1 screen away
+            { rootMargin: "20% 0px" }
         );
 
         if (containerRef.current) {
@@ -41,6 +44,8 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
     }, []);
 
     useEffect(() => {
+        if (!shouldLoad) return;
+
         const video = videoRef.current;
         if (!video) return;
 
@@ -71,9 +76,9 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
             st.kill();
             video.removeEventListener("loadeddata", handleLoaded);
         };
-    }, []);
+    }, [shouldLoad]);
 
-    // Text is visible between 20% - 80% of scroll progress for this section
+    // Text is visible between 15% - 85% of scroll progress
     const showText = progress > 0.15 && progress < 0.85;
     const textProgress = showText ? 1 : 0;
 
@@ -82,23 +87,25 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
             {/* Sticky viewport */}
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
                 {/* Video Loader / Poster */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: isLoaded ? 0 : 1 }}
-                    className="absolute inset-0 z-10 pointer-events-none"
-                >
-                    <img
-                        src={section.posterSrc}
-                        alt=""
-                        className="w-full h-full object-cover blur-sm scale-105 opacity-50"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-8 h-8 border-2 border-white/20 border-t-white/80 rounded-full animate-spin" />
-                    </div>
-                </motion.div>
+                {shouldLoad && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isLoaded ? 0 : 1 }}
+                        className="absolute inset-0 z-10 pointer-events-none"
+                    >
+                        <img
+                            src={section.posterSrc}
+                            alt=""
+                            className="w-full h-full object-cover blur-sm scale-105 opacity-50"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-8 h-8 border-2 border-white/20 border-t-white/80 rounded-full animate-spin" />
+                        </div>
+                    </motion.div>
+                )}
 
                 {/* Video */}
-                {isInView && (
+                {shouldLoad && (
                     <video
                         ref={videoRef}
                         src={section.videoSrc}
