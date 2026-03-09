@@ -34,6 +34,7 @@ optimize "1-exterior.mp4" "1-exterior.mp4"  # Added this for direct updates
 optimize "walk-in.mp4" "2-parking.mp4"
 optimize "entrance-lobby.mp4" "3-lobby.mp4"
 optimize "4-0-VORLA-NEW-HALL-interior.mp4" "4-interior-bare.mp4"
+optimize "main hall.mp4" "4-interior-bare.mp4" # Replaces 4-interior-bare
 optimize "decorated-vln.mp4" "5-interior-decorated.mp4"
 optimize "courtyard-lobby.mp4" "6-courtyard-lobby.mp4"
 optimize "makeup.mp4" "7-changing-rooms.mp4"
