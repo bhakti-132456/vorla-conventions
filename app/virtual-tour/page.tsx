@@ -25,7 +25,7 @@ export default function VirtualTour() {
             videoSrc: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4",
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
             description: "Experience intimate refinement — 700+ capacity with modern elegance and complete AC comfort.",
-            className: "md:col-span-3 md:row-span-2 h-[600px] md:h-auto",
+            className: "md:col-span-3 md:row-span-2 h-[600px]",
             href: "/virtual-tour/laxmi-narsamma",
         },
         {
@@ -33,14 +33,14 @@ export default function VirtualTour() {
             videoSrc: STOCK_VIDEOS.hall,
             posterImg: UNSPLASH.hall,
             description: "The grand convention — 1,200+ seating, column-free engineering, premium acoustics.",
-            className: "md:col-span-1 md:row-span-1 h-[400px] md:h-auto",
+            className: "md:col-span-1 md:row-span-1 h-[400px]",
         },
         {
             title: "Outdoor Spaces",
             videoSrc: STOCK_VIDEOS.garden,
             posterImg: UNSPLASH.garden,
             description: "Manicured landscapes and grand courtyard for grand arrivals.",
-            className: "md:col-span-2 md:row-span-1 h-[400px] md:h-auto",
+            className: "md:col-span-2 md:row-span-1 h-[400px]",
         },
     ];
 
