@@ -21,33 +21,26 @@ const UNSPLASH = {
 export default function VirtualTour() {
     const categories = [
         {
+            title: "Vorla Lakshmi Narsamma",
+            videoSrc: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4",
+            posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
+            description: "Experience intimate refinement — 700+ capacity with modern elegance and complete AC comfort.",
+            className: "md:col-span-3 md:row-span-2 h-[500px] md:h-auto",
+            href: "/virtual-tour/laxmi-narsamma",
+        },
+        {
             title: "Vorla Lakshma Reddy",
             videoSrc: STOCK_VIDEOS.hall,
             posterImg: UNSPLASH.hall,
             description: "The grand convention — 1,200+ seating, column-free engineering, premium acoustics.",
-            className: "md:col-span-2 md:row-span-2 h-[400px] md:h-auto",
-        },
-        {
-            title: "Vorla Lakshmi Narsamma",
-            videoSrc: STOCK_VIDEOS.hall2,
-            posterImg: UNSPLASH.hall2,
-            description: "Intimate refinement — 700+ capacity with modern elegance.",
-            className: "md:col-span-1 md:row-span-1 h-[250px] md:h-auto",
-            href: "/virtual-tour/laxmi-narsamma",
+            className: "md:col-span-1 md:row-span-1 h-[300px] md:h-auto",
         },
         {
             title: "Outdoor Spaces",
             videoSrc: STOCK_VIDEOS.garden,
             posterImg: UNSPLASH.garden,
-            description: "Manicured landscapes under celestial canopy.",
-            className: "md:col-span-1 md:row-span-1 h-[250px] md:h-auto",
-        },
-        {
-            title: "The Courtyard",
-            videoSrc: STOCK_VIDEOS.courtyard,
-            posterImg: UNSPLASH.courtyard,
-            description: "Regal arrival experience with 2,000+ vehicle capacity.",
-            className: "md:col-span-2 md:row-span-1 h-[250px] md:h-auto",
+            description: "Manicured landscapes and grand courtyard for grand arrivals.",
+            className: "md:col-span-2 md:row-span-1 h-[300px] md:h-auto",
         },
     ];
 
