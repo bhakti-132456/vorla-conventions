@@ -142,7 +142,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                 </motion.div>
 
                 {/* Text overlay — bottom center */}
-                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center pointer-events-none pb-16 md:pb-24 px-6">
+                <div className="absolute bottom-12 md:bottom-12 left-0 right-0 flex flex-col items-center pointer-events-none pb-16 md:pb-24 px-6">
                     {/* Title */}
                     <motion.h2
                         animate={{
@@ -182,7 +182,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                     <motion.div
                         animate={{ opacity: progress < 0.03 ? 1 : 0 }}
                         transition={{ duration: 0.5 }}
-                        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+                        className="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
                     >
                         <span className="text-[9px] font-mono uppercase tracking-[0.5em] text-white/40">
                             Scroll to explore

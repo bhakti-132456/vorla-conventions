@@ -27,23 +27,19 @@ export default function Navigation() {
                 className={`flex items-center backdrop-blur-xl bg-[#111111]/80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/5 transition-all duration-500 overflow-hidden ${isExpanded ? 'p-3 px-6 gap-6 w-auto' : 'p-3 w-[64px] h-[64px] justify-center cursor-pointer hover:bg-[#222222]/80 hover:scale-105 active:scale-95'}`}
                 onClick={() => !isExpanded && setIsExpanded(true)}
             >
-                {!isExpanded && (
-                    <div className="relative w-8 h-8 opacity-80 transition-opacity">
-                        <Image src="/images/vorla-icon-monogram.png" alt="Menu" fill className="object-contain invert brightness-0" />
+                {/* Monogram / Toggle Button */}
+                <button
+                    onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${isExpanded ? 'hover:bg-white/10' : ''} transition-colors group z-10 cursor-pointer`}
+                    aria-label={isExpanded ? "Close menu" : "Open menu"}
+                >
+                    <div className="relative w-8 h-8 group-hover:scale-105 transition-transform">
+                        <Image src="/images/vorla-icon-monogram.png" alt="Menu" fill className="object-contain" />
                     </div>
-                )}
+                </button>
 
                 {isExpanded && (
                     <>
-                        {/* Close button / Monogram */}
-                        <button
-                            onClick={(e) => { e.stopPropagation(); setIsExpanded(false); }}
-                            className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative hover:bg-white/10 transition-colors group"
-                            aria-label="Close menu"
-                        >
-                            <X size={18} className="text-zinc-400 group-hover:text-white transition-colors" />
-                        </button>
-
                         <div className="w-px h-8 bg-white/10 shrink-0" />
 
                         {navItems.map((item) => {
