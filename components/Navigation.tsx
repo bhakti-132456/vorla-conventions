@@ -14,6 +14,7 @@ export default function Navigation() {
     const navItems = [
         { label: "Sanctuary", href: "/" },
         { label: "Virtual Tour", href: "/virtual-tour" },
+        { label: "Gallery", href: "/gallery" },
         { label: "About", href: "/about" },
         { label: "Contact", href: "/contact" },
     ];

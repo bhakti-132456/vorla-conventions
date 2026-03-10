@@ -44,10 +44,10 @@ function Accordion({ q, a }: { q: string; a: string }) {
     return (
         <div className="border-b border-zinc-200 py-6 cursor-pointer group" onClick={() => setOpen(!open)}>
             <div className="flex justify-between items-center gap-8">
-                <h4 className={`text-lg transition-colors duration-300 font-light ${open ? 'text-zinc-900' : 'text-zinc-600 group-hover:text-zinc-900'}`}>
+                <h4 className={`text-lg transition-colors duration-300 font-light ${open ? 'text-zinc-900 dark:text-zinc-100' : 'text-zinc-600 group-hover:text-zinc-900 dark:group-hover:text-zinc-100'}`}>
                     {q}
                 </h4>
-                <div className="text-zinc-400 group-hover:text-zinc-900 transition-colors">
+                <div className="text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
                     {open ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
             </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                     <div className="flex flex-col gap-8">
                         <Link
                             href="/"
-                            className="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-zinc-800 transition-colors"
+                            className="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                         >
                             <div className="w-8 h-8 rounded-full neuro-pillow flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <ArrowLeft size={12} />
@@ -91,7 +91,7 @@ export default function AboutPage() {
                             <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4 block">
                                 The Original Premium Venue of Saket
                             </span>
-                            <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
+                            <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 dark:text-zinc-100 leading-[0.9]">
                                 Heritage & <br /> Provenance
                             </h1>
                         </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 {/* Narrative Section */}
                 <section className="neuro-pillow p-8 md:p-16 mb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 mb-6">Personal Management,<br />Professional Standards.</h2>
+                        <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 dark:text-zinc-100 mb-6">Personal Management,<br />Professional Standards.</h2>
                         <div className="space-y-6 text-zinc-600 font-light leading-relaxed">
                             <p>
                                 As a family-run estate, our commitment is personal. Every detail, from the maintenance of our pillar-less halls to the hospitality shown to every guest, is overseen with a standard of excellence that only a legacy-driven team can provide.
@@ -133,7 +133,7 @@ export default function AboutPage() {
                     <div className="space-y-16">
                         {FAQS.map((section, idx) => (
                             <div key={idx}>
-                                <h3 className="text-xl font-medium uppercase tracking-widest text-zinc-800 mb-6 pb-2 border-b-2 border-zinc-800 inline-block">
+                                <h3 className="text-xl font-medium uppercase tracking-widest text-zinc-800 dark:text-zinc-100 mb-6 pb-2 border-b-2 border-zinc-800 dark:border-zinc-100 inline-block">
                                     {section.category}
                                 </h3>
                                 <div className="flex flex-col">

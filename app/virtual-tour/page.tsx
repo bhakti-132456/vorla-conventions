@@ -51,7 +51,7 @@ export default function VirtualTour() {
                     <div className="flex flex-col gap-4">
                         <Link
                             href="/"
-                            className="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-zinc-800 transition-colors"
+                            className="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                         >
                             <div className="w-8 h-8 rounded-full neuro-pillow flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <ArrowLeft size={12} />
@@ -59,7 +59,7 @@ export default function VirtualTour() {
                             Back to Sanctuary
                         </Link>
 
-                        <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 mt-4 leading-none">
+                        <h1 className="text-5xl md:text-7xl font-light uppercase tracking-tighter text-zinc-900 dark:text-zinc-100 mt-4 leading-none">
                             Digital <br /> Immersion
                         </h1>
                     </div>

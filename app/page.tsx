@@ -21,7 +21,7 @@ export default function Home() {
           <span className="text-[10px] font-mono uppercase tracking-[1em] text-zinc-400">
             Archiving Grandeur
           </span>
-          <h2 className="text-5xl md:text-8xl font-light uppercase tracking-tighter text-zinc-900 leading-[0.9]">
+          <h2 className="text-5xl md:text-8xl font-light uppercase tracking-tighter text-zinc-900 dark:text-zinc-100 leading-[0.9]">
             Where Light <br /> Meets Volume
           </h2>
           <p className="text-xl font-light text-zinc-500 max-w-2xl mx-auto leading-relaxed">
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
           <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
             <Image
-              src={UNSPLASH.hall}
+              src="/images/vorla-lakshmareddy/2.png"
               alt="The Grand Hall"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -51,7 +51,7 @@ export default function Home() {
 
           <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
             <Image
-              src={UNSPLASH.lawn}
+              src="/images/vorla-laxminarsamma/2.png"
               alt="The Verdant Lawn"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -73,38 +73,39 @@ export default function Home() {
       {/* Program Categories (Neuromorphic Pillows) */}
       <section className="min-h-screen py-32 px-6 bg-zinc-100 flex flex-col items-center justify-center gap-16">
         <div className="text-center">
-          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800">The Dialogue</h2>
+          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100">The Dialogue</h2>
           <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">Curation of Events</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
           {[
-            { label: "Nuptials", desc: "A sacred canvas for your 'I Do'. We provide the sanctuary; you provide the story.", img: UNSPLASH.wedding },
-            { label: "Corporate", desc: "Elevate your brand in a space that mirrors professional excellence and architectural precision.", img: UNSPLASH.corporate },
-            { label: "Exhibitions", desc: "High-volume, high-impact. The ideal Hyderabad venue for trade fairs and large-scale showcases.", img: UNSPLASH.exhibition },
+            { label: "Nuptials", desc: "Weddings, receptions, pre wedding and post wedding parties etc. A sacred canvas for your 'I Do'. We provide the sanctuary; you provide the story.", img: "/images/vorla-laxminarsamma/6.png" },
+            { label: "Personal Celebrations", desc: "Birthdays, anniversaries, and other personal celebrations. Curated gatherings that demand a sophisticated touch.", img: "/images/vorla-laxminarsamma/10.png" },
+            { label: "Corporate", desc: "Elevate your brand in a space that mirrors professional excellence and architectural precision.", img: "/images/vorla-lakshmareddy/4.png" },
+            { label: "Exhibitions", desc: "High-volume, high-impact. The ideal Hyderabad venue for trade fairs and large-scale showcases.", img: "/images/vorla-lakshmareddy/7.png" },
           ].map((item, i) => (
             <div
               key={item.label}
-              className="neuro-pillow text-center aspect-square flex flex-col items-center justify-center hover:scale-[1.02] transition-transform cursor-pointer overflow-hidden relative group"
+              className="clay-card text-center aspect-square flex flex-col items-center justify-center hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-pointer overflow-hidden relative group"
             >
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
 
               <Image
                 src={item.img}
                 alt={item.label}
                 fill
-                className="object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-700 z-0"
+                className="object-cover opacity-0 group-hover:opacity-100 transition-transform duration-1000 group-hover:scale-110 ease-out z-0"
               />
 
-              <div className="relative z-20">
-                <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-300 mb-4 block transition-colors">
+              <div className="relative z-20 p-6 flex flex-col items-center justify-center h-full">
+                <span className="text-[10px] font-mono text-zinc-500 group-hover:text-zinc-300 mb-4 block transition-colors duration-500">
                   0{i + 1}
                 </span>
-                <h4 className="text-2xl font-light uppercase tracking-widest text-zinc-800 group-hover:text-white transition-colors">
+                <h4 className="text-xl xl:text-2xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100 group-hover:text-white transition-colors duration-500">
                   {item.label}
                 </h4>
-                <p className="text-xs text-white/80 mt-4 font-light max-w-[200px] mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                <p className="text-xs text-white/90 mt-4 font-light max-w-[200px] mx-auto opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   {item.desc}
                 </p>
               </div>

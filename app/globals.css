@@ -33,12 +33,12 @@
     --foreground: #f5f5f0;
 
     /* Dark Mode Claymorphism — dark gray bg allows black shadows */
-    --clay-outer: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.03);
-    --clay-inner: inset 1px 1px 3px rgba(255, 255, 255, 0.03), inset -1px -1px 3px rgba(0, 0, 0, 0.3);
+    --clay-outer: 4px 4px 10px rgba(0, 0, 0, 0.25), -4px -4px 10px rgba(255, 255, 255, 0.03);
+    --clay-inner: inset 1px 1px 3px rgba(255, 255, 255, 0.03), inset -1px -1px 3px rgba(0, 0, 0, 0.2);
 
     /* Dark Mode Neuromorphism */
-    --neuro-pressed-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4), inset -3px -3px 6px rgba(255, 255, 255, 0.03);
-    --neuro-elevated-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4), -3px -3px 8px rgba(255, 255, 255, 0.03);
+    --neuro-pressed-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.25), inset -3px -3px 6px rgba(255, 255, 255, 0.03);
+    --neuro-elevated-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25), -3px -3px 8px rgba(255, 255, 255, 0.03);
     --neuro-gradient: linear-gradient(145deg, #222222, #181818);
   }
 }
@@ -56,20 +56,7 @@
   h4,
   h5,
   h6 {
-    @apply text-zinc-900;
-  }
-
-  @media (prefers-color-scheme: dark) {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #f5f5f0;
-      /* Beige/Off-white for dark backgrounds */
-    }
+    @apply text-zinc-900 dark:text-zinc-100;
   }
 }
 
