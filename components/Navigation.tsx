@@ -30,12 +30,22 @@ export default function Navigation() {
             >
                 {/* Monogram / Toggle Button */}
                 <button
-                    onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
+                    onClick={(e) => { 
+                        e.stopPropagation(); 
+                        setIsExpanded(!isExpanded); 
+                    }}
                     className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${isExpanded ? 'hover:bg-white/10' : ''} transition-colors group z-10 cursor-pointer`}
                     aria-label={isExpanded ? "Close menu" : "Open menu"}
                 >
                     <div className="relative w-8 h-8 group-hover:scale-105 transition-transform">
-                        <Image src="/images/vorla-icon-monogram.png" alt="Menu" fill className="object-contain" />
+                        <Image 
+                            src="/images/vorla-icon-monogram.png" 
+                            alt="Vorla Monogram" 
+                            fill 
+                            className="object-contain" 
+                            priority 
+                            unoptimized
+                        />
                     </div>
                 </button>
 

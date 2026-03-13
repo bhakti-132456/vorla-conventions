@@ -58,6 +58,11 @@
   h6 {
     @apply text-zinc-900 dark:text-zinc-100;
   }
+
+  /* Accessibility: Focus Indicators */
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-white/50 ring-2 ring-white/20 transition-all;
+  }
 }
 
 @layer components {

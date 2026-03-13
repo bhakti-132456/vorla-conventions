@@ -16,14 +16,21 @@ interface VenueSection {
 
 interface VenueScrubProps {
     sections: VenueSection[];
+    venueName?: React.ReactNode;
 }
 
 function ScrubSection({ section, index }: { section: VenueSection; index: number }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [progress, setProgress] = useState(0);
+    const [showText, setShowText] = useState(false);
+    const [showHint, setShowHint] = useState(true);
     const [shouldLoad, setShouldLoad] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+
+    // Animation Values (LERP)
+    const targetTime = useRef(0);
+    const currentTime = useRef(0);
+    const rafId = useRef<number>(0);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -52,19 +59,37 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
         // Force first frame on mount
         video.currentTime = 0;
 
+        // LERP Render Loop
+        const render = () => {
+            if (video.readyState >= 2 && video.duration) {
+                const diff = targetTime.current - currentTime.current;
+                if (Math.abs(diff) > 0.001) {
+                    currentTime.current += diff * 0.15; // LERP smoothing
+                    video.currentTime = currentTime.current;
+                }
+            }
+            rafId.current = requestAnimationFrame(render);
+        };
+        rafId.current = requestAnimationFrame(render);
+
         const st = ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: 0.5, // Smoother scrub
+            scrub: true,
             onUpdate: (self) => {
                 const p = self.progress;
-                setProgress(p);
+
+                const isVisible = p > 0.15 && p < 0.85;
+                setShowText((prev) => prev !== isVisible ? isVisible : prev);
+
+                if (index === 0) {
+                    const isHintVisible = p < 0.03;
+                    setShowHint((prev) => prev !== isHintVisible ? isHintVisible : prev);
+                }
+
                 if (video.duration) {
-                    // Using requestAnimationFrame to ensure smooth updates
-                    requestAnimationFrame(() => {
-                        video.currentTime = p * video.duration;
-                    });
+                    targetTime.current = p * video.duration;
                 }
             },
         });
@@ -73,13 +98,12 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
         video.addEventListener("loadeddata", handleLoaded);
 
         return () => {
+            if (rafId.current) cancelAnimationFrame(rafId.current);
             st.kill();
             video.removeEventListener("loadeddata", handleLoaded);
         };
     }, [shouldLoad]);
 
-    // Text is visible between 15% - 85% of scroll progress
-    const showText = progress > 0.15 && progress < 0.85;
     const textProgress = showText ? 1 : 0;
 
     return (
@@ -180,7 +204,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                 {/* Scroll hint — only on first section at very start */}
                 {index === 0 && (
                     <motion.div
-                        animate={{ opacity: progress < 0.03 ? 1 : 0 }}
+                        animate={{ opacity: showHint ? 1 : 0 }}
                         transition={{ duration: 0.5 }}
                         className="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
                     >
@@ -195,7 +219,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
     );
 }
 
-export default function VenueScrub({ sections }: VenueScrubProps) {
+export default function VenueScrub({ sections, venueName }: VenueScrubProps) {
     return (
         <div className="bg-black">
             {sections.map((section, i) => (
@@ -208,7 +232,11 @@ export default function VenueScrub({ sections }: VenueScrubProps) {
                     End of Tour
                 </span>
                 <h3 className="text-white text-3xl md:text-5xl font-light uppercase tracking-tighter text-center">
-                    Vorla Laxmi Narsamma<br />Conventions
+                    {venueName || (
+                        <>
+                            Vorla Laxmi Narsamma<br />Conventions
+                        </>
+                    )}
                 </h3>
                 <p className="text-white/40 text-sm font-light max-w-sm text-center mt-2">
                     Experience the space in person. Schedule an inspection today.

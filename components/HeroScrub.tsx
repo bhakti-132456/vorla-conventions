@@ -187,25 +187,25 @@ export default function HeroScrub() {
 
                     <h1
                         ref={headlineRef}
-                        className="text-white text-5xl md:text-8xl font-light uppercase tracking-tighter leading-[0.9] text-center"
+                        className="text-white text-4xl sm:text-5xl md:text-8xl font-light uppercase tracking-tighter leading-[0.9] text-center"
                     >
                         Vorla<br />Conventions
                     </h1>
 
-                    <div ref={ctaWrapperRef} className="text-center flex flex-col items-center">
-                        <p className="text-white/60 text-base md:text-lg font-light mt-4 md:mt-6 max-w-sm mx-auto leading-relaxed">
+                    <div ref={ctaWrapperRef} className="text-center flex flex-col items-center w-full px-4">
+                        <p className="text-white/60 text-sm md:text-lg font-light mt-4 md:mt-6 max-w-[280px] sm:max-w-sm mx-auto leading-relaxed">
                             A curated sanctuary for significant moments.
                         </p>
-                        <div className="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4 justify-center pointer-events-auto">
+                        <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pointer-events-auto">
                             <a
                                 href="/virtual-tour"
-                                className="px-6 md:px-8 py-3 bg-white text-black text-xs md:text-sm uppercase tracking-widest font-medium rounded-full hover:bg-neutral-200 transition-all shadow-xl active:scale-95"
+                                className="px-6 md:px-8 py-3 bg-white text-black text-[10px] md:text-sm uppercase tracking-widest font-medium rounded-full hover:bg-neutral-200 transition-all shadow-xl active:scale-95"
                             >
                                 Explore Venues
                             </a>
                             <a
                                 href="#contact"
-                                className="px-6 md:px-8 py-3 border border-white/30 text-white text-xs md:text-sm uppercase tracking-widest font-medium rounded-full hover:bg-white/10 transition-all active:scale-95"
+                                className="px-6 md:px-8 py-3 border border-white/30 text-white text-[10px] md:text-sm uppercase tracking-widest font-medium rounded-full hover:bg-white/10 transition-all active:scale-95 text-center"
                             >
                                 Request Inspection
                             </a>
