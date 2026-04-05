@@ -214,7 +214,7 @@ export default function AboutPage() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
-                <header className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <header className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12">
                     <div className="flex flex-col gap-8">
                         <Link
                             href="/"
@@ -244,7 +244,7 @@ export default function AboutPage() {
                 </header>
 
                 {/* Narrative Section */}
-                <section className="neuro-pillow p-8 md:p-16 mb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <section className="neuro-pillow p-6 md:p-16 mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
                         <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 dark:text-zinc-100 mb-6">Unmatched Amenities,<br />Professional Standards.</h2>
                         <div className="space-y-6 text-zinc-600 font-light leading-relaxed">
@@ -269,7 +269,7 @@ export default function AboutPage() {
                         Frequently Asked Questions
                     </span>
 
-                    <div className="space-y-16">
+                    <div className="space-y-12 md:space-y-16">
                         {FAQS.map((section, idx) => (
                             <div key={idx}>
                                 <h3 className="text-xl font-medium uppercase tracking-widest text-zinc-800 dark:text-zinc-100 mb-6 pb-2 border-b-2 border-zinc-800 dark:border-zinc-100 inline-block">

@@ -89,8 +89,8 @@ export default function GalleryPage() {
     return (
         <main className="min-h-screen bg-[var(--background)] p-6 md:p-12 lg:p-24">
             <div className="max-w-7xl mx-auto">
-                <header className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
-                    <div className="flex flex-col gap-8">
+                <header className="mb-12 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12">
+                    <div className="flex flex-col gap-6 md:gap-8">
                         <Link
                             href="/"
                             className="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
@@ -136,7 +136,7 @@ export default function GalleryPage() {
                 </div>
 
                 {/* Masonry-style Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[300px]">
                     {filteredImages.map((img, i) => (
                         <div
                             key={i}

@@ -25,7 +25,7 @@ export default function Navigation() {
     return (
         <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex justify-center">
             <div
-                className={`flex items-center backdrop-blur-xl bg-[#111111]/80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/5 transition-all duration-500 overflow-hidden ${isExpanded ? 'p-3 px-6 gap-6 w-auto' : 'p-3 w-[64px] h-[64px] justify-center cursor-pointer hover:bg-[#222222]/80 hover:scale-105 active:scale-95'}`}
+                className={`flex items-center backdrop-blur-xl bg-[#111111]/80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/5 transition-all duration-500 overflow-hidden ${isExpanded ? 'p-2 px-4 md:p-3 md:px-6 gap-4 md:gap-6 w-auto flex-wrap sm:flex-nowrap justify-center' : 'p-3 w-[64px] h-[64px] justify-center cursor-pointer hover:bg-[#222222]/80 hover:scale-105 active:scale-95'}`}
                 onClick={() => !isExpanded && setIsExpanded(true)}
             >
                 {/* Monogram / Toggle Button */}

@@ -9,7 +9,7 @@ export default function ContactPage() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
-                <header className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <header className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12">
                     <div className="flex flex-col gap-8">
                         <Link
                             href="/"
@@ -39,10 +39,10 @@ export default function ContactPage() {
                 </header>
 
                 {/* Contact Info & Form */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
 
                     {/* Details */}
-                    <div className="space-y-16">
+                    <div className="space-y-12 md:space-y-16">
                         <div className="flex items-center gap-6 group">
                             <div className="w-12 h-12 rounded-full clay-card flex items-center justify-center shrink-0 text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-100 transition-colors">
                                 <MapPin size={20} />
@@ -85,7 +85,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Form */}
-                    <div className="neuro-pillow p-8 md:p-12 relative overflow-hidden">
+                    <div className="neuro-pillow p-6 sm:p-8 md:p-12 relative overflow-hidden">
                         <h3 className="text-2xl font-light uppercase tracking-tight text-zinc-800 dark:text-zinc-100 mb-8">Send an Inquiry</h3>
                         <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
                             <div>

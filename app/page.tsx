@@ -20,7 +20,7 @@ export default function Home() {
       </section>
 
       {/* Editorial Content Section — Venue Spaces */}
-      <section className="relative min-h-screen py-32 px-6 md:px-24 flex flex-col items-center justify-center gap-24">
+      <section className="relative min-h-screen py-20 md:py-32 px-6 md:px-24 flex flex-col items-center justify-center gap-16 md:gap-24">
         <div className="max-w-4xl text-center space-y-8">
           <span className="text-[10px] font-mono uppercase tracking-[1em] text-zinc-400">
             Luxury Venue Spaces
@@ -75,7 +75,7 @@ export default function Home() {
       </section>
 
       {/* Amenities & Corporate Section */}
-      <section className="min-h-screen py-32 px-6 bg-zinc-100 flex flex-col items-center justify-center gap-16">
+      <section className="min-h-screen py-20 md:py-32 px-6 bg-zinc-100 flex flex-col items-center justify-center gap-12 md:gap-16">
         <div className="text-center max-w-4xl">
           <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100">Unmatched Amenities</h2>
           <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">Total Event Dominance</p>
