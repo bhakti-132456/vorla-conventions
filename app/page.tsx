@@ -1,31 +1,35 @@
 import HeroScrub from "@/components/HeroScrub";
 import Image from "next/image";
 
-// Unsplash CC0 images for demonstration
-const UNSPLASH = {
-  hall: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80", // grand ballroom
-  lawn: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80", // outdoor garden event
-  wedding: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80", // wedding
-  corporate: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80", // corporate
-  exhibition: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80", // exhibition
-};
-
 export default function Home() {
   return (
     <main className="relative bg-[var(--background)]">
       <HeroScrub />
 
-      {/* Editorial Content Section */}
+      {/* SEO Hero Content (hidden visually, visible to crawlers) */}
+      <section className="sr-only" aria-label="About Vorla Conventions">
+        <h1>Vorla Conventions: The Most Prestigious Convention Center in Hyderabad and Secunderabad</h1>
+        <p>
+          Welcome to <strong>Vorla Conventions</strong>, a landmark of luxury and the finest <strong>convention center in Secunderabad</strong>. 
+          Strategically located in the serene environment of <strong>Sainikpuri</strong> and <strong>Saket, Hyderabad</strong>, our venue is designed to host 
+          the most prestigious events with a royal touch. Spanning across a massive <strong>68,000 square feet</strong>, Vorla Conventions offers a 
+          <strong>pillarless grand hall</strong> that stands as one of the largest and most elegant <strong>function halls in Hyderabad</strong>. 
+          Whether you are searching for a dream <strong>wedding venue</strong>, a professional <strong>corporate event space</strong>, or a 
+          sprawling lawn for an outdoor celebration, we provide matchless facilities and world-class hospitality to make your vision a reality.
+        </p>
+      </section>
+
+      {/* Editorial Content Section — Venue Spaces */}
       <section className="relative min-h-screen py-32 px-6 md:px-24 flex flex-col items-center justify-center gap-24">
         <div className="max-w-4xl text-center space-y-8">
           <span className="text-[10px] font-mono uppercase tracking-[1em] text-zinc-400">
-            Archiving Grandeur
+            Luxury Venue Spaces
           </span>
           <h2 className="text-5xl md:text-8xl font-light uppercase tracking-tighter text-zinc-900 dark:text-zinc-100 leading-[0.9]">
-            Where Light <br /> Meets Volume
+            Experience the Luxury <br /> of Our Venue Spaces
           </h2>
           <p className="text-xl font-light text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-            Discover Hyderabad&apos;s twin-estate sanctuary. Vorla Conventions brings together the iconic Lakshma Reddy and Laxmi Narsamma halls—spaces designed to elevate weddings, corporate milestones, and grand exhibitions into lasting legacies.
+            Discover <strong>Hyderabad&apos;s</strong> twin-estate sanctuary. <strong>Vorla Conventions</strong> brings together the iconic Lakshma Reddy and Laxmi Narsamma halls—spaces designed to elevate <strong>weddings</strong>, <strong>corporate milestones</strong>, and grand <strong>exhibitions</strong> into lasting legacies at the <strong>best convention center in Hyderabad</strong>.
           </p>
         </div>
 
@@ -33,18 +37,18 @@ export default function Home() {
           <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
             <Image
               src="/images/vorla-lakshmareddy/2.png"
-              alt="The Grand Hall"
+              alt="Grand Indoor Convention Hall at Vorla Conventions - AC Function Hall in Hyderabad with pillarless design and 1500 guest capacity"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="relative z-10 p-12">
               <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                Lakshma Reddy
+                The Grand Indoor Convention Hall
               </h3>
-              <p className="text-sm text-white/80 mt-2 italic font-serif">The Grand Volume.</p>
+              <p className="text-sm text-white/80 mt-2 italic font-serif">Premium AC Function Hall in Hyderabad.</p>
               <p className="text-sm text-white/60 mt-4 max-w-sm">
-                A masterclass in engineering, offering 1,200+ capacity in a stunning, pillar-free expanse. Designed for those who require scale without compromising on atmospheric intimacy.
+                Our flagship space is perfect for those seeking a premium <strong>AC function hall in Hyderabad</strong>. With a guest capacity of up to <strong>1,500</strong>, this <strong>pillarless</strong> marvel features high ceilings, sophisticated lighting, and a grand stage, making it the top choice for <strong>Big Fat Indian Weddings</strong>, traditional receptions, and large-scale cultural exhibitions.
               </p>
             </div>
           </div>
@@ -52,37 +56,40 @@ export default function Home() {
           <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
             <Image
               src="/images/vorla-laxminarsamma/2.png"
-              alt="The Verdant Lawn"
+              alt="Lush Outdoor Event Lawns at Vorla Conventions - Wedding Lawns in Secunderabad and Kapra for sangeet and cocktail parties"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="relative z-10 p-12">
               <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                Laxmi Narsamma
+                Lush Outdoor Event Lawns
               </h3>
-              <p className="text-sm text-white/80 mt-2 italic font-serif">Refined Sophistication.</p>
+              <p className="text-sm text-white/80 mt-2 italic font-serif">Outdoor Wedding Venues in Secunderabad.</p>
               <p className="text-sm text-white/60 mt-4 max-w-sm">
-                An elegant 700+ capacity space where modern aesthetics meet functional warmth. Perfect for curated gatherings and premium social events that demand a sophisticated touch.
+                Our sprawling lawns offer a picturesque setting for evening <strong>sangeets</strong>, <strong>haldi ceremonies</strong>, and <strong>cocktail parties</strong> under the stars. Surrounded by greenery and featuring elegant decor, our lawns are among the most sought-after <strong>outdoor wedding venues in Secunderabad</strong> and <strong>Kapra</strong>.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Program Categories (Neuromorphic Pillows) */}
+      {/* Amenities & Corporate Section */}
       <section className="min-h-screen py-32 px-6 bg-zinc-100 flex flex-col items-center justify-center gap-16">
-        <div className="text-center">
-          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100">The Dialogue</h2>
-          <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">Curation of Events</p>
+        <div className="text-center max-w-4xl">
+          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100">Unmatched Amenities</h2>
+          <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">Total Event Dominance</p>
+          <p className="text-lg font-light text-zinc-500 mt-8 max-w-3xl mx-auto leading-relaxed">
+            At <strong>Vorla Conventions</strong>, we believe in providing a stress-free experience. Our venue comes equipped with state-of-the-art facilities, including massive <strong>secure parking for hundreds of cars</strong>, ensuring convenience for your guests arriving from all parts of the <strong>Twin Cities</strong>. We offer fully-furnished, <strong>air-conditioned bridal and groom suites</strong> for ultimate comfort. We provide the flexibility of exquisite <strong>in-house multi-cuisine catering</strong> or the option to bring your own preferred <strong>outside catering vendors</strong>.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
           {[
-            { label: "Nuptials", desc: "Weddings, receptions, pre wedding and post wedding parties etc. A sacred canvas for your 'I Do'. We provide the sanctuary; you provide the story.", img: "/images/vorla-laxminarsamma/6.png" },
-            { label: "Personal Celebrations", desc: "Birthdays, anniversaries, and other personal celebrations. Curated gatherings that demand a sophisticated touch.", img: "/images/vorla-laxminarsamma/10.png" },
-            { label: "Corporate", desc: "Elevate your brand in a space that mirrors professional excellence and architectural precision.", img: "/images/vorla-lakshmareddy/4.png" },
-            { label: "Exhibitions", desc: "High-volume, high-impact. The ideal Hyderabad venue for trade fairs and large-scale showcases.", img: "/images/vorla-lakshmareddy/7.png" },
+            { label: "Nuptials", desc: "Big Fat Indian Weddings, receptions, sangeet, haldi ceremonies. The finest wedding venue in Sainikpuri, Hyderabad for your most sacred celebrations.", img: "/images/vorla-laxminarsamma/6.png" },
+            { label: "Celebrations", desc: "Birthday parties, engagement functions, naming ceremonies, and anniversaries in the best banquet hall in North Hyderabad.", img: "/images/vorla-laxminarsamma/10.png" },
+            { label: "Corporate", desc: "Leading corporate event venue in Hyderabad for product launches, AGMs, seminars near ECIL, AS Rao Nagar, and Kompally.", img: "/images/vorla-lakshmareddy/4.png" },
+            { label: "Exhibitions", desc: "Premier exhibition center in Secunderabad. High-volume trade fairs and showcases in our pillarless 68,000 sq ft space.", img: "/images/vorla-lakshmareddy/7.png" },
           ].map((item, i) => (
             <div
               key={item.label}
@@ -111,6 +118,17 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Corporate Section */}
+        <div className="max-w-4xl text-center mt-16">
+          <h2 className="text-4xl font-light uppercase tracking-widest text-zinc-800 dark:text-zinc-100">
+            Corporate Excellence
+          </h2>
+          <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">The Ideal Venue for Corporate Events in Hyderabad</p>
+          <p className="text-lg font-light text-zinc-500 mt-8 max-w-3xl mx-auto leading-relaxed">
+            <strong>Vorla Conventions</strong> is not just a <strong>marriage hall</strong>; it is a versatile hub for <strong>corporate dominance</strong>. We are a leading <strong>corporate event venue in Hyderabad</strong>, hosting <strong>product launches</strong>, <strong>annual general meetings (AGMs)</strong>, <strong>trade fairs</strong>, and professional <strong>seminars</strong>. Our location near <strong>ECIL</strong>, <strong>AS Rao Nagar</strong>, and <strong>Kompally</strong> makes us a central point for businesses across <strong>Secunderabad</strong>.
+          </p>
         </div>
       </section>
     </main>

@@ -182,7 +182,7 @@ export default function HeroScrub() {
                         ref={eyebrowRef}
                         className="block text-[10px] md:text-[11px] font-mono uppercase tracking-[0.6em] md:tracking-[0.8em] text-white/80 mb-4 md:mb-6"
                     >
-                        The Architecture of Gathering
+                        The Most Prestigious Venue in Hyderabad
                     </span>
 
                     <h1
@@ -194,7 +194,7 @@ export default function HeroScrub() {
 
                     <div ref={ctaWrapperRef} className="text-center flex flex-col items-center w-full px-4">
                         <p className="text-white/60 text-sm md:text-lg font-light mt-4 md:mt-6 max-w-[280px] sm:max-w-sm mx-auto leading-relaxed">
-                            A curated sanctuary for significant moments.
+                            The finest <strong>convention center in Secunderabad</strong>. 68,000 sq ft of <strong>pillarless grand hall</strong> in Sainikpuri, Saket.
                         </p>
                         <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pointer-events-auto">
                             <a
