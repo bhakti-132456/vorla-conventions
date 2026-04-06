@@ -95,18 +95,8 @@ export default function VirtualTour() {
                     })}
                 </div>
 
-                <footer className="mt-24 pt-12 border-t border-zinc-300 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-zinc-400">
-                            Demonstration Assets
-                        </span>
-                        <div className="flex gap-4">
-                            <span className="text-[10px] uppercase font-bold text-zinc-600">Unsplash CC0</span>
-                            <span className="text-[10px] uppercase font-bold text-zinc-600">Pixabay CC0</span>
-                        </div>
-                    </div>
-
-                    <div className="text-center md:text-right">
+                <footer className="mt-24 pt-12 border-t border-zinc-300 flex justify-center items-center">
+                    <div className="text-center">
                         <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
                             © 2026 Vorla Conventions
                         </p>

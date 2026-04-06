@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function GalleryPage() {
     const [filter, setFilter] = useState("all");
+    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
     const categories = [
         { id: "all", label: "All Spaces" },
@@ -75,7 +77,6 @@ export default function GalleryPage() {
         { src: "/images/outdoor-spaces/9.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/10.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/11.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/Big hall pics website (1).png", category: "outdoor", alt: "Outdoor Spaces View" },
 
         // Venue General
         { src: "/images/gallery-courtyard.png", category: "outdoor", alt: "Gallery Courtyard" },
@@ -140,7 +141,8 @@ export default function GalleryPage() {
                     {filteredImages.map((img, i) => (
                         <div
                             key={i}
-                            className={`relative group rounded-3xl overflow-hidden clay-card ${
+                            onClick={() => setSelectedImageIndex(i)}
+                            className={`relative group rounded-3xl overflow-hidden clay-card cursor-pointer ${
                                 // Make some items span 2 rows or columns for a dynamic layout
                                 i % 5 === 0 ? "md:col-span-2 md:row-span-2" :
                                     i % 7 === 0 ? "md:row-span-2" : ""
@@ -153,11 +155,99 @@ export default function GalleryPage() {
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-mono text-[10px] uppercase tracking-widest bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                                    Expand
+                                </span>
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImageIndex !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+                        onClick={() => setSelectedImageIndex(null)}
+                    >
+                        {/* Close button */}
+                        <button
+                            className="absolute top-8 right-8 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedImageIndex(null);
+                            }}
+                        >
+                            <X className="text-white" size={24} />
+                        </button>
+
+                        {/* Navigation - Prev */}
+                        <button
+                            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const prev = selectedImageIndex === 0 ? filteredImages.length - 1 : selectedImageIndex - 1;
+                                setSelectedImageIndex(prev);
+                            }}
+                        >
+                            <ChevronLeft className="text-white" size={24} />
+                        </button>
+
+                        {/* Image Container */}
+                        <div
+                            className="relative w-full h-full max-w-5xl max-h-[80vh] flex items-center justify-center"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <motion.div
+                                key={selectedImageIndex}
+                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                                className="relative w-full h-full"
+                            >
+                                <Image
+                                    src={filteredImages[selectedImageIndex].src}
+                                    alt={filteredImages[selectedImageIndex].alt}
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                            </motion.div>
+                        </div>
+
+                        {/* Navigation - Next */}
+                        <button
+                            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const next = selectedImageIndex === filteredImages.length - 1 ? 0 : selectedImageIndex + 1;
+                                setSelectedImageIndex(next);
+                            }}
+                        >
+                            <ChevronRight className="text-white" size={24} />
+                        </button>
+
+                        {/* Caption */}
+                        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+                            <p className="text-white/60 font-mono text-[10px] uppercase tracking-[0.4em] mb-2">
+                                {categories.find(c => c.id === filteredImages[selectedImageIndex].category)?.label || "Gallery"}
+                            </p>
+                            <h2 className="text-white text-xl font-light uppercase tracking-widest">
+                                {filteredImages[selectedImageIndex].alt}
+                            </h2>
+                            <p className="text-white/40 font-mono text-[10px] mt-4 tracking-widest">
+                                {selectedImageIndex + 1} / {filteredImages.length}
+                            </p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </main>
     );
 }
