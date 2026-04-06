@@ -88,7 +88,7 @@ export default function Home() {
           {[
             { label: "Nuptials", desc: "Big Fat Indian Weddings, receptions, sangeet, haldi ceremonies. The finest wedding venue in Sainikpuri, Hyderabad for your most sacred celebrations.", img: "/images/vorla-laxminarsamma/6.png" },
             { label: "Celebrations", desc: "Birthday parties, engagement functions, naming ceremonies, and anniversaries in the best banquet hall in North Hyderabad.", img: "/images/vorla-laxminarsamma/10.png" },
-            { label: "Corporate", desc: "Leading corporate event venue in Hyderabad for product launches, AGMs, seminars near ECIL, AS Rao Nagar, and Kompally.", img: "/images/vorla-lakshmareddy/4.png" },
+            { label: "Corporate", desc: "Leading corporate event venue in Hyderabad for product launches, AGMs, seminars near ECIL and AS Rao Nagar.", img: "/images/vorla-lakshmareddy/4.png" },
             { label: "Exhibitions", desc: "Premier exhibition center in Secunderabad. High-volume trade fairs and showcases in our pillarless 68,000 sq ft space.", img: "/images/vorla-lakshmareddy/7.png" },
           ].map((item, i) => (
             <div
@@ -127,7 +127,7 @@ export default function Home() {
           </h2>
           <p className="text-zinc-400 mt-4 uppercase tracking-[0.2em] text-[10px]">The Ideal Venue for Corporate Events in Hyderabad</p>
           <p className="text-lg font-light text-zinc-500 mt-8 max-w-3xl mx-auto leading-relaxed">
-            <strong>Vorla Conventions</strong> is not just a <strong>marriage hall</strong>; it is a versatile hub for <strong>corporate dominance</strong>. We are a leading <strong>corporate event venue in Hyderabad</strong>, hosting <strong>product launches</strong>, <strong>annual general meetings (AGMs)</strong>, <strong>trade fairs</strong>, and professional <strong>seminars</strong>. Our location near <strong>ECIL</strong>, <strong>AS Rao Nagar</strong>, and <strong>Kompally</strong> makes us a central point for businesses across <strong>Secunderabad</strong>.
+            <strong>Vorla Conventions</strong> is not just a <strong>marriage hall</strong>; it is a versatile hub for <strong>corporate dominance</strong>. We are a leading <strong>corporate event venue in Hyderabad</strong>, hosting <strong>product launches</strong>, <strong>annual general meetings (AGMs)</strong>, <strong>trade fairs</strong>, and professional <strong>seminars</strong>. Our location near <strong>ECIL</strong> and <strong>AS Rao Nagar</strong> makes us a central point for businesses across <strong>Secunderabad</strong>.
           </p>
         </div>
       </section>

@@ -33,18 +33,18 @@ export default function TourCard({ title, videoSrc, posterImg, description, clas
             className={`relative cursor-pointer transition-all duration-500 overflow-hidden ${className} ${isHovered ? "glass-card scale-[1.02]" : "neuro-pillow"
                 }`}
         >
-            {/* Poster Image (always visible, fades when video plays) */}
+            {/* Poster Image (always visible, fades when video plays on desktop) */}
             <div className="absolute inset-0 z-0">
                 <img
                     src={posterImg}
                     alt={title}
-                    className={`w-full h-full object-cover transition-opacity duration-700 ${isHovered ? "opacity-0" : "opacity-40"
+                    className={`w-full h-full object-cover transition-opacity duration-700 ${isHovered ? "md:opacity-0" : "opacity-40 md:opacity-40"
                         }`}
                 />
             </div>
 
-            {/* Video (plays on hover) */}
-            <div className="absolute inset-0 z-0">
+            {/* Video (plays on hover, hidden on mobile) */}
+            <div className="absolute inset-0 z-0 hidden md:block">
                 <video
                     ref={videoRef}
                     loop

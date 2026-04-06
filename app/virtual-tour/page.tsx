@@ -31,7 +31,7 @@ export default function VirtualTour() {
         {
             title: "Vorla Lakshma Reddy (Live)",
             videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/mobile/bighall.mp4" },
-            posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/6.png",
+            posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-poster.jpg",
             description: "The grand convention. A walkthrough of our 1,200-seat, column-free engineering marvel.",
             className: "md:col-span-1 md:row-span-1 h-[400px]",
             href: "/virtual-tour/vorla-lakshma-reddy",
@@ -39,7 +39,7 @@ export default function VirtualTour() {
         {
             title: "Estate Landscapes",
             videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside.mp4", mobile: "/mobile/bighall-outside.mp4" },
-            posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/6.png",
+            posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside-poster.jpg",
             description: "Nature, curated. Explore our manicured landscapes and grand ceremonial courtyard.",
             className: "md:col-span-2 md:row-span-1 h-[400px]",
         },

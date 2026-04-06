@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Vorla Conventions | Best Convention Center in Hyderabad & Secunderabad | Luxury Function Hall",
-  description: "Vorla Conventions is the most prestigious convention center in Hyderabad and Secunderabad. 68,000 sq ft pillarless grand hall, luxury AC banquet halls, wedding lawns in Sainikpuri, Saket, Kapra. Best wedding venue, corporate event space & exhibition center near ECIL, AS Rao Nagar, Kompally.",
+  description: "Vorla Conventions is the most prestigious convention center in Hyderabad and Secunderabad. 68,000 sq ft pillarless grand hall, luxury AC banquet halls, wedding lawns in Sainikpuri, Saket, Kapra. Best wedding venue, corporate event space & exhibition center near ECIL and AS Rao Nagar.",
   keywords: "Best Convention Center in Hyderabad, Luxury Function Hall Secunderabad, AC Banquet Halls in Hyderabad, Marriage Gardens in Secunderabad, Wedding Lawns Hyderabad, Best Wedding Venue near me, Convention Centers in Sainikpuri, Big Fat Indian Wedding Venue, Corporate Seminar Hall Hyderabad, Exhibition Center Secunderabad, Birthday Party Hall Sainikpuri, kalyana mandapam Kapra Hyderabad",
   openGraph: {
     title: "Vorla Conventions | Best Convention Center in Hyderabad & Secunderabad",
@@ -88,7 +88,7 @@ export default function RootLayout({
       { "@type": "LocationFeatureSpecification", name: "Catering", value: true },
       { "@type": "LocationFeatureSpecification", name: "Bridal Suite", value: true },
     ],
-    areaServed: ["Hyderabad", "Secunderabad", "Sainikpuri", "Saket", "Kapra", "ECIL", "AS Rao Nagar", "Kompally", "Alwal", "Malkajgiri", "Yapral", "Kushaiguda"],
+    areaServed: ["Hyderabad", "Secunderabad", "Sainikpuri", "Saket", "Kapra", "ECIL", "AS Rao Nagar", "Alwal", "Malkajgiri", "Yapral", "Kushaiguda"],
   };
 
   return (
