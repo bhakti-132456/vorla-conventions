@@ -73,7 +73,6 @@ export default function GalleryPage() {
         { src: "/images/vorla-laxminarsamma/14.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
 
         // Outdoor Spaces
-        { src: "/images/outdoor-spaces/5.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/9.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/10.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/11.png", category: "outdoor", alt: "Outdoor Spaces" },

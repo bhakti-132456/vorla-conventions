@@ -21,27 +21,20 @@ const UNSPLASH = {
 export default function VirtualTour() {
     const categories = [
         {
-            title: "Laxmi Narsamma (Live)",
+            title: "Laxmi Narsamma",
             videoSrc: { default: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4", mobile: "/mobile/vln-intro.mp4" },
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
             description: "Experience intimate refinement. A walkthrough of our 700+ capacity hall, where modern elegance meets thoughtful design.",
-            className: "md:col-span-3 md:row-span-2 h-[600px]",
+            className: "md:col-span-1 md:row-span-1 h-[600px]",
             href: "/virtual-tour/laxmi-narsamma",
         },
         {
-            title: "Vorla Lakshma Reddy (Live)",
+            title: "Vorla Lakshma Reddy",
             videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/mobile/bighall.mp4" },
             posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-poster.jpg",
             description: "The grand convention. A walkthrough of our 1,200-seat, column-free engineering marvel.",
-            className: "md:col-span-1 md:row-span-1 h-[400px]",
+            className: "md:col-span-1 md:row-span-1 h-[600px]",
             href: "/virtual-tour/vorla-lakshma-reddy",
-        },
-        {
-            title: "Estate Landscapes",
-            videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside.mp4", mobile: "/mobile/bighall-outside.mp4" },
-            posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside-poster.jpg",
-            description: "Nature, curated. Explore our manicured landscapes and grand ceremonial courtyard.",
-            className: "md:col-span-2 md:row-span-1 h-[400px]",
         },
     ];
 
@@ -73,7 +66,7 @@ export default function VirtualTour() {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-fr">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:auto-rows-fr">
                     {categories.map((cat, i) => {
                         const card = (
                             <TourCard
