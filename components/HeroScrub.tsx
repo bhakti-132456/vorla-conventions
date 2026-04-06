@@ -157,14 +157,16 @@ export default function HeroScrub() {
                 >
                     <video
                         ref={videoRef}
-                        src="/videos/vorla-hero-home-1080p.mp4"
                         poster="/videos/vorla-hero-home-poster.jpg"
                         muted
                         playsInline
                         disablePictureInPicture
                         preload="auto"
                         className="w-full h-full object-cover"
-                    />
+                    >
+                        <source src="/mobile/mobile-home-hero.mp4" media="(max-width: 767px)" type="video/mp4" />
+                        <source src="/videos/vorla-hero-home-1080p.mp4" media="(min-width: 768px)" type="video/mp4" />
+                    </video>
                 </div>
 
                 {/* Scrim Overlay */}

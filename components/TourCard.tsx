@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface TourCardProps {
     title: string;
-    videoSrc: string;
+    videoSrc: string | { default: string; mobile?: string };
     posterImg: string;      // Unsplash cover image
     description?: string;
     className?: string;
@@ -47,13 +47,21 @@ export default function TourCard({ title, videoSrc, posterImg, description, clas
             <div className="absolute inset-0 z-0">
                 <video
                     ref={videoRef}
-                    src={videoSrc}
                     loop
                     muted
                     playsInline
                     className={`w-full h-full object-cover transition-opacity duration-700 ${isHovered ? "opacity-100" : "opacity-0"
                         }`}
-                />
+                >
+                    {typeof videoSrc === "string" ? (
+                        <source src={videoSrc} />
+                    ) : (
+                        <>
+                            {videoSrc.mobile && <source src={videoSrc.mobile} media="(max-width: 767px)" />}
+                            <source src={videoSrc.default} />
+                        </>
+                    )}
+                </video>
             </div>
 
             {/* Dark overlay for text readability */}

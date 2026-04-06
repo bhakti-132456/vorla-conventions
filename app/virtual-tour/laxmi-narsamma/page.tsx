@@ -4,7 +4,7 @@ const BASE = "/videos/virtual-tour/vorla-laxmi-narsamma";
 
 const SECTIONS = [
     {
-        videoSrc: `${BASE}/1-exterior.mp4`,
+        videoSrc: { default: `${BASE}/1-exterior.mp4`, mobile: "/mobile/vln-intro.mp4" },
         posterSrc: `${BASE}/1-exterior-poster.jpg`,
         title: "The Facade | First Impressions",
         subtitle: "A striking architectural statement. The exterior sets the tone for the premium experience awaiting your guests within.",

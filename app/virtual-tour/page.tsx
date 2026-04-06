@@ -22,7 +22,7 @@ export default function VirtualTour() {
     const categories = [
         {
             title: "Laxmi Narsamma (Live)",
-            videoSrc: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4",
+            videoSrc: { default: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4", mobile: "/mobile/vln-intro.mp4" },
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
             description: "Experience intimate refinement. A walkthrough of our 700+ capacity hall, where modern elegance meets thoughtful design.",
             className: "md:col-span-3 md:row-span-2 h-[600px]",
@@ -30,7 +30,7 @@ export default function VirtualTour() {
         },
         {
             title: "Vorla Lakshma Reddy (Live)",
-            videoSrc: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4",
+            videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/mobile/bighall.mp4" },
             posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/6.png",
             description: "The grand convention. A walkthrough of our 1,200-seat, column-free engineering marvel.",
             className: "md:col-span-1 md:row-span-1 h-[400px]",
@@ -38,7 +38,7 @@ export default function VirtualTour() {
         },
         {
             title: "Estate Landscapes",
-            videoSrc: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside.mp4",
+            videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-outside.mp4", mobile: "/mobile/bighall-outside.mp4" },
             posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/6.png",
             description: "Nature, curated. Explore our manicured landscapes and grand ceremonial courtyard.",
             className: "md:col-span-2 md:row-span-1 h-[400px]",

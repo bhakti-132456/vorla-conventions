@@ -77,8 +77,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Email Inquiries</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
-                                    <a href="mailto:info@vorlaconventions.in" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">info@vorlaconventions.in</a><br />
-                                    <a href="mailto:events@vorlaconventions.in" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">events@vorlaconventions.in</a>
+                                    <a href="mailto:vorlaconventions@gmail.com" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">vorlaconventions@gmail.com</a>
                                 </p>
                             </div>
                         </div>

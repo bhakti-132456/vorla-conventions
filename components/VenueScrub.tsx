@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 interface VenueSection {
-    videoSrc: string;
+    videoSrc: string | { default: string; mobile?: string };
     posterSrc: string;
     title: string;
     subtitle?: string;
@@ -128,17 +128,24 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                     </motion.div>
                 )}
 
-                {/* Video */}
                 {shouldLoad && (
                     <video
                         ref={videoRef}
-                        src={section.videoSrc}
                         poster={section.posterSrc}
                         muted
                         playsInline
                         preload="auto"
                         className={`w-full h-full object-cover transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                    />
+                    >
+                        {typeof section.videoSrc === "string" ? (
+                            <source src={section.videoSrc} />
+                        ) : (
+                            <>
+                                {section.videoSrc.mobile && <source src={section.videoSrc.mobile} media="(max-width: 767px)" />}
+                                <source src={section.videoSrc.default} />
+                            </>
+                        )}
+                    </video>
                 )}
 
                 {/* Bottom gradient for text readability */}
