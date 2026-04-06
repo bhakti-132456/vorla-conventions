@@ -45,8 +45,6 @@ export default function GalleryPage() {
         { src: "/images/vorla-lakshmareddy/19.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/20.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/21.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/22.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/Big hall pics website.png", category: "lakshma", alt: "Lakshma Reddy Hall Big View" },
 
         // Laxmi Narsamma
         { src: "/images/vorla-laxminarsamma/1.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
@@ -64,7 +62,7 @@ export default function GalleryPage() {
         { src: "/images/vorla-laxminarsamma/8.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/8 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/9.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/9 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
+        { src: "/images/vorla-laxminarsamma/9 (2).png", category: "laxmi", alt: "Larsamma Hall" },
         { src: "/images/vorla-laxminarsamma/10.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/10 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/11.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
@@ -73,18 +71,14 @@ export default function GalleryPage() {
         { src: "/images/vorla-laxminarsamma/14.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
 
         // Outdoor Spaces
+        { src: "/images/outdoor-spaces/5.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/9.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/10.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/11.png", category: "outdoor", alt: "Outdoor Spaces" },
-
-        // Venue General
-        { src: "/images/gallery-courtyard.png", category: "outdoor", alt: "Gallery Courtyard" },
-        { src: "/images/gallery-hall-1.png", category: "lakshma", alt: "Gallery Hall 1" },
-        { src: "/images/gallery-hall-2.png", category: "laxmi", alt: "Gallery Hall 2" },
-        { src: "/images/gallery-venue-view.webp", category: "outdoor", alt: "Gallery Venue View" }
+        { src: "/images/outdoor-spaces/22.png", category: "outdoor", alt: "Outdoor Spaces" }
     ];
 
-    const filteredImages = filter === "all" ? images : images.filter((img) => img.category === filter);
+    const filteredImages = (filter === "all") ? images : images.filter((img) => img.category === filter);
 
     return (
         <main className="min-h-screen bg-[var(--background)] p-6 md:p-12 lg:p-24">
