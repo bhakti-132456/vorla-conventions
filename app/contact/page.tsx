@@ -64,8 +64,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="text-sm font-mono uppercase tracking-widest mb-3">Direct Line</h3>
                                 <p className="text-zinc-500 font-light leading-relaxed">
-                                    <a href="tel:+919876543210" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">+91 98765 43210</a><br />
-                                    <a href="tel:+919876543211" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">+91 98765 43211</a>
+                                    <a href="tel:+919393000999" className="hover:text-zinc-800 dark:hover:text-zinc-100 transition-colors">+91 93930 00999</a>
                                 </p>
                             </div>
                         </div>

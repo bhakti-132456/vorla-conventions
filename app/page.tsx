@@ -33,40 +33,42 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
-          <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
-            <Image
-              src="/images/vorla-lakshmareddy/2.png"
-              alt="Grand Indoor Convention Hall at Vorla Conventions - AC Function Hall in Hyderabad with pillarless design and 1500 guest capacity"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="relative z-10 p-12">
-              <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                The Grand Indoor Convention Hall
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full max-w-6xl">
+          <div className="flex flex-col gap-8 group">
+            <div className="clay-card aspect-[4/5] overflow-hidden relative">
+              <Image
+                src="/images/vorla-lakshmareddy/2.png"
+                alt="Grand Indoor Convention Hall at Vorla Conventions - AC Function Hall in Hyderabad with pillarless design and 1500 guest capacity"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="px-4">
+              <h3 className="text-3xl font-light uppercase tracking-tight text-zinc-900 dark:text-zinc-100">
+                Vorla Lakhsma Reddy Conventions
               </h3>
-              <p className="text-sm text-white/80 mt-2 italic font-serif">Premium AC Function Hall in Hyderabad.</p>
-              <p className="text-sm text-white/60 mt-4 max-w-sm">
+              <p className="text-sm text-zinc-500 mt-2 italic font-serif">Premium AC Function Hall in Hyderabad.</p>
+              <p className="text-sm text-zinc-400 mt-4 leading-relaxed max-w-sm">
                 Our flagship space is perfect for those seeking a premium <strong>AC function hall in Hyderabad</strong>. With a guest capacity of up to <strong>1,500</strong>, this <strong>pillarless</strong> marvel features high ceilings, sophisticated lighting, and a grand stage, making it the top choice for <strong>Big Fat Indian Weddings</strong>, traditional receptions, and large-scale cultural exhibitions.
               </p>
             </div>
           </div>
 
-          <div className="clay-card aspect-[4/5] flex flex-col justify-end group cursor-pointer overflow-hidden relative">
-            <Image
-              src="/images/vorla-laxminarsamma/2.png"
-              alt="Lush Outdoor Event Lawns at Vorla Conventions - Wedding Lawns in Secunderabad and Kapra for sangeet and cocktail parties"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="relative z-10 p-12">
-              <h3 className="text-3xl font-light uppercase tracking-tight text-white">
-                Lush Outdoor Event Lawns
+          <div className="flex flex-col gap-8 group">
+            <div className="clay-card aspect-[4/5] overflow-hidden relative">
+              <Image
+                src="/images/vorla-laxminarsamma/2.png"
+                alt="Lush Outdoor Event Lawns at Vorla Conventions - Wedding Lawns in Secunderabad and Kapra for sangeet and cocktail parties"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="px-4">
+              <h3 className="text-3xl font-light uppercase tracking-tight text-zinc-900 dark:text-zinc-100">
+                Vorla Laxmi Narsamma Conventions
               </h3>
-              <p className="text-sm text-white/80 mt-2 italic font-serif">Outdoor Wedding Venues in Secunderabad.</p>
-              <p className="text-sm text-white/60 mt-4 max-w-sm">
+              <p className="text-sm text-zinc-500 mt-2 italic font-serif">Outdoor Wedding Venues in Secunderabad.</p>
+              <p className="text-sm text-zinc-400 mt-4 leading-relaxed max-w-sm">
                 Our sprawling lawns offer a picturesque setting for evening <strong>sangeets</strong>, <strong>haldi ceremonies</strong>, and <strong>cocktail parties</strong> under the stars. Surrounded by greenery and featuring elegant decor, our lawns are among the most sought-after <strong>outdoor wedding venues in Secunderabad</strong> and <strong>Kapra</strong>.
               </p>
             </div>

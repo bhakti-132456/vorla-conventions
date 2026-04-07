@@ -184,7 +184,7 @@ export default function HeroScrub() {
                     <div className="flex flex-col items-center text-center">
                         <span
                             ref={eyebrowRef}
-                            className="block text-[10px] md:text-[11px] font-mono uppercase tracking-[0.6em] md:tracking-[0.8em] text-white/80 mb-4 md:mb-6"
+                            className="block text-[10px] md:text-[11px] font-mono uppercase tracking-[0.6em] md:tracking-[0.8em] md:mr-[-0.8em] text-white/80 mb-4 md:mb-6"
                         >
                             The Most Prestigious Venue in Hyderabad
                         </span>

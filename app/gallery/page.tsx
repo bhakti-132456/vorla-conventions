@@ -44,7 +44,7 @@ export default function GalleryPage() {
         { src: "/images/vorla-lakshmareddy/18.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/19.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/20.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/21.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
+
 
         // Laxmi Narsamma
         { src: "/images/vorla-laxminarsamma/1.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
