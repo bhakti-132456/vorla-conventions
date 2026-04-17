@@ -56,12 +56,11 @@ export default function GalleryPage() {
         { src: "/images/vorla-laxminarsamma/13.png", category: "laxmi", alt: "Vorla Laxmi Narsamma Conventions" },
 
         // Outdoor Spaces
-        { src: "/images/outdoor-spaces/5.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/9.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/10.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/11.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/22.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/Big hall pics website (1).png", category: "outdoor", alt: "Outdoor Spaces" }
+        { src: "/images/outdoor-spaces/1.png", category: "outdoor", alt: "Outdoor Spaces" },
+        { src: "/images/outdoor-spaces/2.png", category: "outdoor", alt: "Outdoor Spaces" },
+        { src: "/images/outdoor-spaces/3.png", category: "outdoor", alt: "Outdoor Spaces" },
+        { src: "/images/outdoor-spaces/4.png", category: "outdoor", alt: "Outdoor Spaces" },
+        { src: "/images/outdoor-spaces/5.png", category: "outdoor", alt: "Outdoor Spaces" }
     ];
 
     const filteredImages = (filter === "all") ? images : images.filter((img) => img.category === filter);
