@@ -73,10 +73,10 @@ export default function TourCard({ title, videoSrc, posterImg, description, clas
                     animate={{ y: isHovered ? -10 : 0 }}
                     className="flex flex-col gap-2"
                 >
-                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">
                         Venue Category
                     </span>
-                    <h3 className={`text-2xl font-light uppercase tracking-tight transition-colors duration-500 ${isHovered ? "text-white" : "text-zinc-800"
+                    <h3 className={`text-2xl font-light uppercase tracking-tight transition-colors duration-500 ${isHovered ? "text-white" : "text-zinc-800 dark:text-zinc-100"
                         }`}>
                         {title}
                     </h3>

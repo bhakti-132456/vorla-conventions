@@ -92,7 +92,7 @@ export default function GalleryPage() {
                     </div>
 
                     <div className="hidden md:block max-w-sm text-left md:text-right">
-                        <p className="text-sm font-light leading-relaxed text-zinc-500 uppercase tracking-tight">
+                        <p className="text-sm font-light leading-relaxed text-zinc-500 dark:text-zinc-400 uppercase tracking-tight">
                             A Curated Collection.<br />
                             <span className="normal-case tracking-normal">Explore our spaces through the lens. Immerse yourself in the details and grandeur of Vorla Conventions.</span>
                         </p>

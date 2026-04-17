@@ -160,9 +160,9 @@ const FAQS = [
 function Accordion({ q, a }: { q: string; a: string }) {
     const [open, setOpen] = useState(false);
     return (
-        <div className="border-b border-zinc-200 py-6 cursor-pointer group" onClick={() => setOpen(!open)}>
+        <div className="border-b border-zinc-200 dark:border-zinc-700 py-6 cursor-pointer group" onClick={() => setOpen(!open)}>
             <div className="flex justify-between items-center gap-8">
-                <h4 className={`text-lg transition-colors duration-300 font-light ${open ? 'text-zinc-900 dark:text-zinc-100' : 'text-zinc-600 group-hover:text-zinc-900 dark:group-hover:text-zinc-100'}`}>
+                <h4 className={`text-lg transition-colors duration-300 font-light ${open ? 'text-zinc-900 dark:text-zinc-100' : 'text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100'}`}>
                     {q}
                 </h4>
                 <div className="text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
@@ -177,7 +177,7 @@ function Accordion({ q, a }: { q: string; a: string }) {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                     >
-                        <p className="pt-4 text-zinc-500 font-light leading-relaxed pr-12">
+                        <p className="pt-4 text-zinc-500 dark:text-zinc-400 font-light leading-relaxed pr-12">
                             {a}
                         </p>
                     </motion.div>
@@ -237,7 +237,7 @@ export default function AboutPage() {
                     </div>
 
                     <div className="max-w-sm">
-                        <p className="text-sm font-light leading-relaxed text-zinc-500">
+                        <p className="text-sm font-light leading-relaxed text-zinc-500 dark:text-zinc-400">
                             Established in 2008, <strong>Vorla Conventions</strong> was a pioneer—the first fully <strong>AC function hall</strong> in <strong>Sainikpuri</strong> and <strong>Saket</strong>. Since then, we have evolved from a local landmark into <strong>Hyderabad&apos;s</strong> premier destination for grand events spanning <strong>68,000 square feet</strong>. We don&apos;t just host events; we curate environments where memories are preserved at the finest <strong>convention center in Secunderabad</strong>.
                         </p>
                     </div>
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 <section className="neuro-pillow p-6 md:p-16 mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
                         <h2 className="text-3xl font-light uppercase tracking-tight text-zinc-800 dark:text-zinc-100 mb-6">Unmatched Amenities,<br />Professional Standards.</h2>
-                        <div className="space-y-6 text-zinc-600 font-light leading-relaxed">
+                        <div className="space-y-6 text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                             <p>
                                 As a family-run estate, our commitment is personal. Every detail, from the maintenance of our <strong>pillarless halls</strong> to the hospitality shown to every guest, is overseen with a standard of excellence. Our venue features <strong>massive secure parking</strong>, <strong>air-conditioned bridal and groom suites</strong>, and the flexibility of <strong>in-house multi-cuisine catering</strong> or <strong>outside catering vendors</strong>—making us the <strong>best wedding venue in Sainikpuri</strong> and across <strong>North Hyderabad</strong>.
                             </p>

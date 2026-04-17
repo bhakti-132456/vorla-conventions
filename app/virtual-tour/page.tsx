@@ -59,7 +59,7 @@ export default function VirtualTour() {
                     </div>
 
                     <div className="hidden md:block max-w-sm text-right">
-                        <p className="text-sm font-light leading-relaxed text-zinc-500 uppercase tracking-tight">
+                        <p className="text-sm font-light leading-relaxed text-zinc-500 dark:text-zinc-400 uppercase tracking-tight">
                             A Spatial Study.<br />
                             <span className="normal-case tracking-normal">Explore the volume, lighting, and atmospheric quality of our estates from anywhere. Navigate our interiors to find the perfect fit for your vision.</span>
                         </p>
@@ -88,7 +88,7 @@ export default function VirtualTour() {
                     })}
                 </div>
 
-                <footer className="mt-24 pt-12 border-t border-zinc-300 flex justify-center items-center">
+                <footer className="mt-24 pt-12 border-t border-zinc-300 dark:border-zinc-700 flex justify-center items-center">
                     <div className="text-center">
                         <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
                             © 2026 Vorla Conventions
