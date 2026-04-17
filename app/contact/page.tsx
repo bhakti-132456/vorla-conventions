@@ -169,7 +169,7 @@ export default function ContactPage() {
 
         try {
             // UPDATE THIS URL after you deploy the Google Apps Script
-            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVcjKhdZPdtG8jaIk3n7hFxX2J-KwvTk_fk09_6Td0-1WnJ6EPCcTEQXOUngZsU3m90g/exec";
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyjCyAYKUW4P2gaFrK2yJdniMyJfJ21W7tJiINdACW9gUjDBrNNwjHovcFRwlPpdp9yOA/exec";
             
             const response = await fetch(SCRIPT_URL, {
                 method: "POST",
