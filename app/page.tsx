@@ -29,7 +29,7 @@ export default function Home() {
             Experience the Luxury <br /> of Our Venue Spaces
           </h2>
           <p className="text-xl font-light text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-            Discover <strong>Hyderabad&apos;s</strong> twin-estate sanctuary. <strong>Vorla Conventions</strong> brings together the iconic Lakshma Reddy and Laxmi Narsamma halls—spaces designed to elevate <strong>weddings</strong>, <strong>corporate milestones</strong>, and grand <strong>exhibitions</strong> into lasting legacies at the <strong>best convention center in Hyderabad</strong>.
+            Discover <strong>Hyderabad&apos;s</strong> twin-estate sanctuary. <strong>Vorla Conventions</strong> brings together the iconic Vorla Lakshma Reddy Conventions and Vorla Laxmi Narsamma Conventions—spaces designed to elevate <strong>weddings</strong>, <strong>corporate milestones</strong>, and grand <strong>exhibitions</strong> into lasting legacies at the <strong>best convention center in Hyderabad</strong>.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
             <div className="px-4">
               <h3 className="text-3xl font-light uppercase tracking-tight text-zinc-900 dark:text-zinc-100">
-                Vorla Lakhsma Reddy Conventions
+                Vorla Lakshma Reddy Conventions
               </h3>
               <p className="text-sm text-zinc-500 mt-2 italic font-serif">Premium AC Function Hall in Hyderabad.</p>
               <p className="text-sm text-zinc-400 mt-4 leading-relaxed max-w-sm">

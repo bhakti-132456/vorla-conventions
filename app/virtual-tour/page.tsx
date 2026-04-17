@@ -21,7 +21,7 @@ const UNSPLASH = {
 export default function VirtualTour() {
     const categories = [
         {
-            title: "Laxmi Narsamma",
+            title: "Vorla Laxmi Narsamma Conventions",
             videoSrc: { default: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4", mobile: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-mobile.mp4" },
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
             description: "Experience intimate refinement. A walkthrough of our 700+ capacity hall, where modern elegance meets thoughtful design.",
@@ -29,7 +29,7 @@ export default function VirtualTour() {
             href: "/virtual-tour/laxmi-narsamma",
         },
         {
-            title: "Vorla Lakshma Reddy",
+            title: "Vorla Lakshma Reddy Conventions",
             videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-mobile.mp4" },
             posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-poster.jpg",
             description: "The grand convention. A walkthrough of our 1,200-seat, column-free engineering marvel.",

@@ -79,5 +79,10 @@ const SECTIONS = [
 
 
 export default function LaxmiNarsammaPage() {
-    return <VenueScrub sections={SECTIONS} />;
+    return (
+        <VenueScrub
+            sections={SECTIONS}
+            venueName={<>Vorla Laxmi Narsamma<br />Conventions</>}
+        />
+    );
 }
