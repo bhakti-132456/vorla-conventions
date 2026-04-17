@@ -19,18 +19,12 @@ export default function GalleryPage() {
 
     const images = [
         // Lakshma Reddy
-        { src: "/images/vorla-lakshmareddy/1.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/2.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/2 (2).png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/3.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/3 (2).png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/4.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/4 (2).png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/5.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/6.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/6 (2).png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/7.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-        { src: "/images/vorla-lakshmareddy/7 (2).png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/8.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/9.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/10.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
@@ -44,38 +38,30 @@ export default function GalleryPage() {
         { src: "/images/vorla-lakshmareddy/18.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/19.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
         { src: "/images/vorla-lakshmareddy/20.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
-
+        { src: "/images/vorla-lakshmareddy/21.png", category: "lakshma", alt: "Lakshma Reddy Hall" },
 
         // Laxmi Narsamma
         { src: "/images/vorla-laxminarsamma/1.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/2.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/2 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/3.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/3 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/4.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/4 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/5.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/6.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/6 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/7.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/7 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/8.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/8 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/9.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/9 (2).png", category: "laxmi", alt: "Larsamma Hall" },
         { src: "/images/vorla-laxminarsamma/10.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/10 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/11.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/11 (2).png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
+        { src: "/images/vorla-laxminarsamma/12.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
         { src: "/images/vorla-laxminarsamma/13.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
-        { src: "/images/vorla-laxminarsamma/14.png", category: "laxmi", alt: "Laxmi Narsamma Hall" },
 
         // Outdoor Spaces
         { src: "/images/outdoor-spaces/5.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/9.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/10.png", category: "outdoor", alt: "Outdoor Spaces" },
         { src: "/images/outdoor-spaces/11.png", category: "outdoor", alt: "Outdoor Spaces" },
-        { src: "/images/outdoor-spaces/22.png", category: "outdoor", alt: "Outdoor Spaces" }
+        { src: "/images/outdoor-spaces/22.png", category: "outdoor", alt: "Outdoor Spaces" },
+        { src: "/images/outdoor-spaces/Big hall pics website (1).png", category: "outdoor", alt: "Outdoor Spaces" }
     ];
 
     const filteredImages = (filter === "all") ? images : images.filter((img) => img.category === filter);

@@ -40,7 +40,7 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
                     observer.disconnect();
                 }
             },
-            { rootMargin: "20% 0px" }
+            { rootMargin: "50% 0px" }
         );
 
         if (containerRef.current) {
@@ -64,10 +64,11 @@ function ScrubSection({ section, index }: { section: VenueSection; index: number
             if (video.readyState >= 2 && video.duration) {
                 const diff = targetTime.current - currentTime.current;
                 if (Math.abs(diff) > 0.001) {
-                    currentTime.current += diff * 0.15; // LERP smoothing
+                    currentTime.current += diff * 0.2; // LERP smoothing (faster for H.264)
                     video.currentTime = currentTime.current;
                 }
             }
+
             rafId.current = requestAnimationFrame(render);
         };
         rafId.current = requestAnimationFrame(render);

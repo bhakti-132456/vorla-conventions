@@ -1,15 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
     const pathname = usePathname();
-    const [clickedItem, setClickedItem] = useState<string | null>(null);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
         { label: "Sanctuary", href: "/" },
@@ -19,80 +19,156 @@ export default function Navigation() {
         { label: "Contact", href: "/contact" },
     ];
 
-    const handlePointerDown = (label: string) => setClickedItem(label);
-    const handlePointerUp = () => setClickedItem(null);
+    // Close menu when route changes
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
+
+    // Prevent scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
 
     return (
-        <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex justify-center">
-            <div
-                className={`flex items-center backdrop-blur-xl bg-[#111111]/80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/5 transition-all duration-500 overflow-hidden ${isExpanded ? 'p-2 px-4 md:p-3 md:px-6 gap-4 md:gap-6 w-auto flex-wrap sm:flex-nowrap justify-center' : 'p-3 w-[64px] h-[64px] justify-center cursor-pointer hover:bg-[#222222]/80 hover:scale-105 active:scale-95'}`}
-                onClick={() => !isExpanded && setIsExpanded(true)}
+        <nav className="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-6 py-6 md:px-12 md:py-8 pointer-events-none">
+            {/* Logo Monogram on the Left */}
+            <Link 
+                href="/" 
+                className="pointer-events-auto group relative flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 z-[110]"
             >
-                {/* Monogram / Toggle Button */}
-                <button
-                    onClick={(e) => { 
-                        e.stopPropagation(); 
-                        setIsExpanded(!isExpanded); 
-                    }}
-                    className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${isExpanded ? 'hover:bg-white/10' : ''} transition-colors group z-10 cursor-pointer`}
-                    aria-label={isExpanded ? "Close menu" : "Open menu"}
-                >
-                    <div className="relative w-8 h-8 group-hover:scale-105 transition-transform">
-                        <Image 
-                            src="/images/vorla-icon-monogram.png" 
-                            alt="Vorla Monogram" 
-                            fill 
-                            className="object-contain" 
-                            priority 
-                            unoptimized
-                        />
-                    </div>
-                </button>
+                <Image 
+                    src="/images/vorla-icon-monogram.png" 
+                    alt="Vorla Monogram" 
+                    width={32}
+                    height={32}
+                    className="object-contain group-hover:scale-110 transition-transform duration-500" 
+                    priority 
+                    unoptimized
+                />
+            </Link>
 
-                {isExpanded && (
-                    <>
-                        <div className="w-px h-8 bg-white/10 shrink-0" />
-
-                        {navItems.map((item) => {
-                            const isActive = pathname === item.href;
-                            const isClicked = clickedItem === item.label;
-                            return (
-                                <Link
-                                    key={item.label}
-                                    href={item.href}
-                                    onPointerDown={() => handlePointerDown(item.label)}
-                                    onPointerUp={handlePointerUp}
-                                    onPointerLeave={handlePointerUp}
-                                    onClick={() => setIsExpanded(false)}
-                                    className="group flex flex-col items-center gap-1"
-                                >
-                                    <div
-                                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isClicked
-                                            ? "bg-black/60 scale-90 shadow-[inset_0_4px_8px_rgba(0,0,0,0.6)]"
-                                            : isActive
-                                                ? "bg-[#222222] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_12px_rgba(0,0,0,0.4)]"
-                                                : "hover:bg-white/5"
-                                            }`}
-                                    >
-                                        <div
-                                            className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-white" : "bg-zinc-500"
-                                                }`}
-                                        />
-                                    </div>
-                                    <span
-                                        className={`text-[8px] font-mono uppercase tracking-[0.15em] transition-colors ${isActive
-                                            ? "text-white font-bold"
-                                            : "text-zinc-300 group-hover:text-white"
-                                            }`}
-                                    >
-                                        {item.label}
-                                    </span>
-                                </Link>
-                            );
-                        })}
-                    </>
-                )}
+            {/* Desktop Menu - Hidden on Mobile */}
+            <div className="hidden md:flex pointer-events-auto items-center backdrop-blur-xl bg-black/40 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/10 px-8 py-3 gap-8 hover:bg-black/50 transition-colors duration-300">
+                {navItems.map((item) => {
+                    const isActive = pathname === item.href;
+                    return (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className="relative group shrink-0"
+                        >
+                            <span
+                                className={`text-xs font-mono uppercase tracking-[0.2em] transition-colors duration-300 ${isActive
+                                    ? "text-white font-medium"
+                                    : "text-zinc-400 group-hover:text-white"
+                                    }`}
+                            >
+                                {item.label}
+                            </span>
+                            {isActive && (
+                                <motion.span 
+                                    layoutId="nav-active"
+                                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" 
+                                />
+                            )}
+                        </Link>
+                    );
+                })}
             </div>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden pointer-events-auto z-[110] w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white"
+                aria-label="Toggle Menu"
+            >
+                <AnimatePresence mode="wait" initial={false}>
+                    {isOpen ? (
+                        <motion.div
+                            key="close"
+                            initial={{ opacity: 0, rotate: -90 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            exit={{ opacity: 0, rotate: 90 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <X size={20} />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="menu"
+                            initial={{ opacity: 0, rotate: 90 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            exit={{ opacity: 0, rotate: -90 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <Menu size={20} />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </button>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed inset-0 z-[105] bg-black/90 md:hidden pointer-events-auto backdrop-blur-2xl"
+                    >
+                        <div className="flex flex-col items-center justify-center h-full gap-8">
+                            {navItems.map((item, index) => {
+                                const isActive = pathname === item.href;
+                                return (
+                                    <motion.div
+                                        key={item.label}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 + 0.2 }}
+                                    >
+                                        <Link
+                                            href={item.href}
+                                            className="group flex flex-col items-center"
+                                        >
+                                            <span 
+                                                className={`text-2xl font-mono uppercase tracking-[0.3em] transition-all duration-300 ${isActive ? "text-white" : "text-zinc-500 group-hover:text-white"
+                                                    }`}
+                                            >
+                                                {item.label}
+                                            </span>
+                                            {isActive && (
+                                                <motion.div 
+                                                    layoutId="mobile-active"
+                                                    className="w-12 h-0.5 bg-white mt-2 shadow-[0_0_12px_rgba(255,255,255,0.8)]" 
+                                                />
+                                            )}
+                                        </Link>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                        
+                        {/* Mobile Footer Deco */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 0.3 }}
+                            transition={{ delay: 0.8 }}
+                            className="absolute bottom-12 left-0 w-full text-center px-12"
+                        >
+                            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6" />
+                            <p className="text-[10px] font-mono tracking-[0.5em] text-white uppercase">Vorla Conventions</p>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }

@@ -22,7 +22,7 @@ export default function VirtualTour() {
     const categories = [
         {
             title: "Laxmi Narsamma",
-            videoSrc: { default: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4", mobile: "/mobile/vln-intro.mp4" },
+            videoSrc: { default: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior.mp4", mobile: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-mobile.mp4" },
             posterImg: "/videos/virtual-tour/vorla-laxmi-narsamma/1-exterior-poster.jpg",
             description: "Experience intimate refinement. A walkthrough of our 700+ capacity hall, where modern elegance meets thoughtful design.",
             className: "md:col-span-1 md:row-span-1 h-[600px]",
@@ -30,7 +30,7 @@ export default function VirtualTour() {
         },
         {
             title: "Vorla Lakshma Reddy",
-            videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/mobile/bighall.mp4" },
+            videoSrc: { default: "/videos/virtual-tour/vorla-lakshma-reddy/bighall.mp4", mobile: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-mobile.mp4" },
             posterImg: "/videos/virtual-tour/vorla-lakshma-reddy/bighall-poster.jpg",
             description: "The grand convention. A walkthrough of our 1,200-seat, column-free engineering marvel.",
             className: "md:col-span-1 md:row-span-1 h-[600px]",
